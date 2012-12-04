@@ -15,7 +15,7 @@ SceneObject::SceneObject(       Shape*           shape,
     mShape(     shape),
     mMaterial(  material),
     mTransform( transform),
-    mIntersection(Intersection())
+    mIntersection()
 {
     
 }
