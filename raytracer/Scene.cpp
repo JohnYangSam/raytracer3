@@ -1,11 +1,15 @@
-#include "Scene.h"
 #include <stdlib.h>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <string>
 
-#define BOUNCE_DEPTH
+#include "Scene.h"
+#include "Sphere.h"
+#include "Triangle.h"
+
+#define BOUNCE_DEPTH_DEFAULT    5
+#define SHADOW_BIAS_DEFAULT     0
 
 using namespace std;
 
@@ -14,14 +18,33 @@ Scene::Scene(std::string sceneFilename) :
     /* Initialize empty states */
     /* mCamera later */
     /* mImagePlane later */
-    mPointLights(       vector<PointLight>()),
-    mDirectionalLights( vector<DirectionalLight>()),
-    mAmbientLights(     vector<AmbientLight>()),
-    mShapes(            vector<Shape>()),
-    mBounceDepth(BOUNCE_DEPTH)
+    /* Use an initialization list to initialize objects that can
+     * be of a variable size when made, but will be set to that
+     * size once they are created so that the entire class knows
+     * how big it needs to be. We use pointers to the vectors in
+     * this case, but if we wanted to initialize them to fixed
+     * sizes with constants, this is where we would do it
+     */
+    mPointLights(       new vector<PointLight>()),
+    mDirectionalLights( new vector<DirectionalLight>()),
+    mAmbientLights(     new vector<AmbientLight>()),
+    mSceneObjects(      new vector<SceneObject>()),
+    mMatrixStack(       new stack<STTransform4>()),
+    mCurrMaterial(      Material(STColor3f(0.0f,0.0f,0.0f),
+                                 STColor3f(0.0f,0.0f,0.0f),
+                                 STColor3f(0.0f,0.0f,0.0f),
+                                 STColor3f(0.0f,0.0f,0.0f),
+                                 0)),
+    mShadowBias(    SHADOW_BIAS_DEFAULT),
+    mBounceDepth(   BOUNCE_DEPTH_DEFAULT)
     /* mOutputFilename later */
 
 {
+    /** Initialization setup */
+    
+    //Initialze matrix stack with the identity matrix
+    mMatrixStack->push(STTransform4::Identity());
+    
 	Parse(sceneFilename);
 }
 
@@ -195,65 +218,72 @@ void Scene::ParsedOutput(int imgWidth, int imgHeight, const std::string& outputF
 
 void Scene::ParsedBounceDepth(int depth)
 {
-	/** CS 148 TODO: Fill this in **/
+    mBounceDepth = depth;
 }
 
 void Scene::ParsedShadowBias(float bias)
 {
-	/** CS 148 TODO: Fill this in **/
+    mShadowBias = bias;
 }
 
 void Scene::ParsedPushMatrix()
 {
-	/** CS 148 TODO: Fill this in **/
+    //Make a copy of the current matrix and push it on the stack
+    STTransform4 transformCopy = STTransform4(mMatrixStack->top());
+    mMatrixStack->push(transformCopy);
 }
 
 void Scene::ParsedPopMatrix()
 {
-	/** CS 148 TODO: Fill this in **/
+    mMatrixStack->pop();
 }
 
 void Scene::ParsedRotate(float rx, float ry, float rz)
 {
-	/** CS 148 TODO: Fill this in **/
+    mMatrixStack->push(STTransform4::Rotation(rx, ry, rz));
 }
 
 void Scene::ParsedScale(float sx, float sy, float sz)
 {
-	/** CS 148 TODO: Fill this in **/
+    mMatrixStack->push(STTransform4::Scaling(sx, sy, sz));
 }
 
 void Scene::ParsedTranslate(float tx, float ty, float tz)
 {
-	/** CS 148 TODO: Fill this in **/
+    mMatrixStack->push(STTransform4::Translation(tx, ty, tz));
 }
 
 void Scene::ParsedSphere(const STPoint3& center, float radius)
 {
-	/** CS 148 TODO: Fill this in **/
+    Shape* sphere = new Sphere(center, radius);
+    STTransform4 currTransform = mMatrixStack->top();
+    mSceneObjects->push_back(SceneObject(sphere, mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedTriangle(const STPoint3& v1, const STPoint3& v2, const STPoint3& v3)
 {
-	/** CS 148 TODO: Fill this in **/
+    Shape* triangle = new Triangle(v1, v2, v3);
+    STTransform4 currTransform = mMatrixStack->top();
+    mSceneObjects->push_back(SceneObject(triangle, mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedAmbientLight(const STColor3f& col)
 {
-	/** CS 148 TODO: Fill this in **/
+    mAmbientLights->push_back(AmbientLight(col));
 }
 
 void Scene::ParsedPointLight(const STPoint3& loc, const STColor3f& col)
 {
-	/** CS 148 TODO: Fill this in **/
+    mPointLights->push_back(PointLight(col, loc));
 }
 
 void Scene::ParsedDirectionalLight(const STVector3& dir, const STColor3f& col)
 {
-	/** CS 148 TODO: Fill this in **/
+    mDirectionalLights->push_back(DirectionalLight(col, dir));
 }
 
 void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const STColor3f& spec, const STColor3f& mirr, float shine)
 {
-	/** CS 148 TODO: Fill this in **/
+    mCurrMaterial = Material(amb, diff, spec, mirr, shine);
+    
 }

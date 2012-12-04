@@ -62,21 +62,27 @@ private:
     ImagePlane*                     mImagePlane;
     
     //Lights
-    std::vector<PointLight>         mPointLights;
-    std::vector<DirectionalLight>   mDirectionalLights;
-    std::vector<AmbientLight>       mAmbientLights;
+    std::vector<PointLight>*         mPointLights;
+    std::vector<DirectionalLight>*   mDirectionalLights;
+    std::vector<AmbientLight>*       mAmbientLights;
     
     //Shapes
-    std::vector<Shape>              mShapes;
+    std::vector<SceneObject>*       mSceneObjects;
     
     //Matrix stack
-    std::stack<STTransform4>        mMatrixStack;
+    std::stack<STTransform4>*        mMatrixStack;
+    
+    //CurrentMaterial
+    Material                         mCurrMaterial;
+    
+    //Miscellaneous variables
+    int                              mShadowBias;
     
     //Bounce depth
-    int                             mBounceDepth;
+    int                              mBounceDepth;
     
     //File to save output
-    std::string                     mOutputFileName;
+    std::string                      mOutputFileName;
 
 };
 

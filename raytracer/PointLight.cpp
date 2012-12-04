@@ -8,8 +8,8 @@
 
 #include "PointLight.h"
 
-PointLight::PointLight(float intensity, const STPoint3& positionPt) :
-    Light(intensity),
+PointLight::PointLight(STColor3f color, const STPoint3& positionPt) :
+    Light(color),
     mPosition(STPoint3(positionPt))
 {}
 

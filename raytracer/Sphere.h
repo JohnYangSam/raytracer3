@@ -12,7 +12,7 @@
 #include "st.h"
 #include "Shape.h"
 
-class Sphere : protected Shape
+class Sphere : public Shape
 {
     
 public:

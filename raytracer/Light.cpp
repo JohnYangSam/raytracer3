@@ -9,11 +9,11 @@
 #include "Light.h"
 
 //Constructor initializes intensity with an initialization list element
-Light::Light(float intensity) :
-mIntensity(intensity)
+Light::Light(STColor3f color) :
+mColor(color)
 {}
 
-float Light::getIntensity() const
+STColor3f Light::getColor() const
 {
-    return mIntensity;
+    return mColor;
 }

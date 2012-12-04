@@ -17,7 +17,7 @@ class AmbientLight : protected Light
     
 public:
     //Ctor
-    AmbientLight(float intensity);
+    AmbientLight(STColor3f color);
     
     //Overide virtual
     STVector3 pointToLightVector(const STPoint3& pt) const;

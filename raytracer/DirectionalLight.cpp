@@ -8,9 +8,9 @@
 
 #include "DirectionalLight.h"
 
-DirectionalLight::DirectionalLight(float intensity, const STVector3& direction) :
+DirectionalLight::DirectionalLight(STColor3f color, const STVector3& direction) :
 
-Light(intensity),
+Light(color),
 mDirection(STVector3(direction))
 {
     mDirection.Normalize();

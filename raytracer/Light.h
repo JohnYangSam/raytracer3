@@ -17,16 +17,16 @@ class Light
     
 public:
     //Ctor Implicitly defined
-    Light(float intensity);
+    Light(STColor3f color);
     
     //Get the vector pointing from a given point to the light
     virtual STVector3 pointToLightVector(const STPoint3& pt) const = 0;
     
     //Get the intensity of the Light
-    float getIntensity() const;
+    STColor3f getColor() const;
 
 protected:
-    const float mIntensity;
+    const STColor3f mColor;
     
 private:  
    };
