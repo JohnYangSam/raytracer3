@@ -35,7 +35,8 @@
       displayScaleIsEnabled = "NO"
       displayScale = "1.00"
       launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
+      useCustomWorkingDirectory = "YES"
+      customWorkingDirectory = "/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/raytracer"
       buildConfiguration = "Debug">
       <BuildableProductRunnable>
          <BuildableReference
@@ -46,6 +47,12 @@
             ReferencedContainer = "container:raytracer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "../exampleScenes/SphereTest.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

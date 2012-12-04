@@ -260,6 +260,7 @@ void Scene::ParsedSphere(const STPoint3& center, float radius)
     Shape* sphere = new Sphere(center, radius);
     STTransform4 currTransform = mMatrixStack->top();
     mSceneObjects->push_back(SceneObject(sphere, *mCurrMaterial, currTransform));
+    
 }
 
 void Scene::ParsedTriangle(const STPoint3& v1, const STPoint3& v2, const STPoint3& v3)
@@ -310,6 +311,7 @@ STImage Scene::render() {
   
     //Iterate through the whole bitmap
     for(int i = 0; i < bitmapWidth; ++i) {
+        cout << "one line down!" << i << endl;
         for(int j = 0; j < bitmapHeight; ++j) {
             STPoint2 imagePlanePt = mImagePlane->getImagePlane2DPoint(i, j);
             Ray cameraRay = mCamera->generateRay(imagePlanePt);
@@ -334,9 +336,11 @@ STImage Scene::render() {
             
             Intersection closestIntersection = closestSceneObjPtr->getIntersection();
             
-            STColor3 color = closestSceneObjPtr->getMaterial.getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, mCamera, 
-            
+            STColor3f color = closestSceneObjPtr->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
+            mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
         }
+        
+        mImagePlane->saveToFile(*mOutputFileName);
     }
     
     //Place holder
