@@ -58,9 +58,9 @@ STColor3f Material::getColor(STPoint3 intersection, STVector3 normal, Camera cam
         R.Normalize();
         STVector3 V = (-1.0f)*camera.getW();
 
-        diffuseTerm += mDiffuse * dLights[l].getColor() * max(0, STVector3::Dot(L, normal));
+        diffuseTerm += mDiffuse * dLights[l].getColor() * max(0., STVector3::Dot(L, normal));
 
-        specularTerm += mSpecular * dLights[l].getColor() * pow(max(0, STVector3::Dot(R, V)), mShine);
+        specularTerm += mSpecular * dLights[l].getColor() * pow(max(0., STVector3::Dot(R, V)), mShine);
     }
     
     for(int l = 0; l < pLights.size(); l++) {
