@@ -1,6 +1,6 @@
 #gitignore for assignment specific files
 *.png
-
+.DS_Store
 
 
 

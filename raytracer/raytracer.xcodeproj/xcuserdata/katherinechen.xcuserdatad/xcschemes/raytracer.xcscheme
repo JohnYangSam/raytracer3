@@ -49,7 +49,15 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
+            argument = "../exampleScenes/CornellBox.txt"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "../exampleScenes/SphereTest.txt"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "../exampleScenes/SphereShadingTest1.txt"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
