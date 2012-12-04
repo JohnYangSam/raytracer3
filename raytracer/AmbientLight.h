@@ -12,7 +12,7 @@
 #include "st.h"
 #include "Light.h"
 
-class AmbientLight : protected Light
+class AmbientLight : public Light
 {
     
 public:

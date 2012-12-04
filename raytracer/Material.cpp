@@ -36,13 +36,43 @@ mShine(shine)
     
 }
 
+float max(float a, float b) {
+    if(a>b) return a;
+    return b;
+}
+
 STColor3f Material::getColor(STPoint3 intersection, STVector3 normal, Camera camera, std::vector<PointLight> pLights, std::vector<DirectionalLight> dLights, std::vector<AmbientLight> aLights) 
 {
-    STColor3f ambientIntensity = STColor3f(0.,0.,0.);
+    STColor3f ambientTerm = STColor3f(0.,0.,0.);
+    STColor3f diffuseTerm = STColor3f(0.,0.,0.);
+    STColor3f specularTerm = STColor3f(0.,0.,0.);
+
     for(int l = 0; l < aLights.size(); l++) {
-        ambientIntensity += aLights[l].getIntensity();
+        ambientTerm += aLights[l].getColor();
     }
-    STColor3f ambientTerm = mAmbient * ambientIntensity;
+    ambientTerm *= mAmbient;
     
+    for(int l = 0; l < dLights.size(); l++) {
+        STVector3 L = (-1.0f)*dLights[l].pointToLightVector();
+        STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;
+        R.Normalize();
+        STVector3 V = (-1.0f)*camera.getW();
+
+        diffuseTerm += mDiffuse * dLights[l].getColor() * max(0, STVector3::Dot(L, normal));
+
+        specularTerm += mSpecular * dLights[l].getColor() * pow(max(0, STVector3::Dot(R, V)), mShine);
+    }
     
+    for(int l = 0; l < pLights.size(); l++) {
+        STVector3 L = (-1.0f)*pLights[l].pointToLightVector(intersection);
+        STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;
+        R.Normalize();
+        STVector3 V = (-1.0f)*camera.getW();
+        
+        diffuseTerm += mDiffuse * pLights[l].getColor() * max(0, STVector3::Dot(L, normal));
+        
+        specularTerm += mSpecular * pLights[l].getColor() * pow(max(0, STVector3::Dot(R, V)), mShine);
+    }
+    
+    return ambientTerm + diffuseTerm + specularTerm;
 }
