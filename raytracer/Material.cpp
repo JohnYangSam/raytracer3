@@ -67,7 +67,8 @@ STColor3f Material::getColor(STPoint3 intersection, STVector3 normal, Camera cam
         STVector3 L = (-1.0f)*pLights->at(l).pointToLightVector(intersection);
         STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;
         R.Normalize();
-        STVector3 V = (-1.0f)*camera.getW();
+        STVector3 V = camera.getEye() - intersection;
+        V.Normalize();
         
         diffuseTerm += mDiffuse * pLights->at(l).getColor() * max(0, STVector3::Dot(L, normal));
         

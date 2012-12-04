@@ -65,7 +65,7 @@ void Camera::Initialize() {
 
 Ray Camera::generateRay(const STPoint2& imagePlane2DPt) const
 {
-    STVector3 direction = getW() + imagePlane2DPt.x * getU() + imagePlane2DPt.y * getV();
+    STVector3 direction = (-1.0)*getW() + imagePlane2DPt.x * getU() + imagePlane2DPt.y * getV();
     return Ray(direction, mEye);
 }
 
