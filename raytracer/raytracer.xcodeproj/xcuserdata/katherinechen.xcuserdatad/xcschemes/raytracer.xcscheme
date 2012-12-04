@@ -60,6 +60,10 @@
             argument = "../exampleScenes/SphereShadingTest1.txt"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "../exampleScenes/TriangleShadingTest.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
