@@ -1,0 +1,991 @@
+Tlibst
+v3
+r1
+cCheck dependencies
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cLibtool /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/libst.a normal x86_64
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+c000000004D55C8270000000000000D03
+t1297467431
+s3331
+i"syslimits.h"
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+c000000004D55C8260000000000003197
+t1297467430
+s12695
+i<machine/ansi.h>
+i<sys/_types.h>
+
+N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+c000000004D55C5660000000000000155
+t1297466726
+s341
+
+N/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
+c000000004B4834EA00000000000005FF
+t1263023338
+s1535
+
+N/System/Library/Frameworks/CoreFoundation.framework/Headers/CoreFoundation.h
+c000000004CC3E8CB0000000000000AF4
+t1287907531
+s2804
+
+N/System/Library/Frameworks/IOKit.framework/Headers/IOCFPlugIn.h
+c000000004CC3E98400000000000008FD
+t1287907716
+s2301
+
+N/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h
+c000000004CC3E9840000000000012048
+t1287907716
+s73800
+
+N/System/Library/Frameworks/IOKit.framework/Headers/hid/IOHIDKeys.h
+c000000004CC3EAB8000000000000394F
+t1287908024
+s14671
+
+N/System/Library/Frameworks/IOKit.framework/Headers/hid/IOHIDLib.h
+c000000004CC3E9840000000000000609
+t1287907716
+s1545
+
+N/System/Library/Frameworks/Kernel.framework/Headers/IOKit/hidsystem/IOHIDUsageTables.h
+c000000004CC3EAB800000000000182B5
+t1287908024
+s98997
+
+N/System/Library/Frameworks/OpenGL.framework/Headers/gl.h
+c000000004B8E4E9E0000000000025B59
+t1267617438
+s154457
+
+N/System/Library/Frameworks/OpenGL.framework/Headers/glu.h
+c000000004B8E4E9E0000000000003F84
+t1267617438
+s16260
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/ext/glew/include/GL/glew.h
+c0000000050BC6BBF000000000008267A
+t1354525631
+s534138
+i<stddef.h>
+i<OpenGL/glu.h>
+i<GL/glu.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp
+c0000000050BC6BBF0000000000000C1A
+t1354525631
+s3098
+i"STColor3f.h"
+i"STColor4f.h"
+i"STColor4ub.h"
+i<math.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp
+c0000000050BC6BBF0000000000000A5C
+t1354525631
+s2652
+i"STColor4f.h"
+i"STColor3f.h"
+i"STColor4ub.h"
+i"STUtil.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp
+c0000000050BC6BBF00000000000003CA
+t1354525631
+s970
+i"STColor4ub.h"
+i"STColor3f.h"
+i"STColor4f.h"
+i"STUtil.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp
+c0000000050BC6BBF00000000000030F7
+t1354525631
+s12535
+i"STFont.h"
+i"st.h"
+i"stgl.h"
+i<map>
+i<vector>
+i<stdlib.h>
+i"ft2build.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp
+c0000000050BC6BBF0000000000000FFF
+t1354525631
+s4095
+i"STImage.h"
+i"stgl.h"
+i"st.h"
+i<assert.h>
+i<stdio.h>
+i<string>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp
+c0000000050BC6BBF00000000000014C5
+t1354525631
+s5317
+i"STImage.h"
+i"st.h"
+i<jpeglib.h>
+i<assert.h>
+i<setjmp.h>
+i<stdio.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp
+c0000000050BC6BBF0000000000001F0F
+t1354525631
+s7951
+i"STImage.h"
+i"st.h"
+i<png.h>
+i<setjmp.h>
+i<stdio.h>
+i<string>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp
+c0000000050BC6BBF0000000000000E8F
+t1354525631
+s3727
+i"STImage.h"
+i"st.h"
+i<string.h>
+i<stdio.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp
+c0000000050BC6BBF0000000000002A64
+t1354525631
+s10852
+i"STJoystick.h"
+i<string.h>
+i<stdio.h>
+i<stdlib.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp
+c0000000050BC6BBF000000000000783B
+t1354525631
+s30779
+i"STJoystick.h"
+i<unistd.h>
+i<ctype.h>
+i<sysexits.h>
+i<mach/mach.h>
+i<mach/mach_error.h>
+i<IOKit/IOKitLib.h>
+i<IOKit/IOCFPlugIn.h>
+i<IOKit/hidsystem/IOHIDUsageTables.h>
+i<Kernel/IOKit/hidsystem/IOHIDUsageTables.h>
+i<IOKit/hid/IOHIDLib.h>
+i<IOKit/hid/IOHIDKeys.h>
+i<CoreFoundation/CoreFoundation.h>
+i<Carbon/Carbon.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp
+c0000000050BC6BBF0000000000000078
+t1354525631
+s120
+i"STPoint2.h"
+i"STVector2.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp
+c0000000050BC6BBF000000000000007E
+t1354525631
+s126
+i"STPoint3.h"
+i"STVector3.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp
+c0000000050BC6BBF0000000000001BFE
+t1354525631
+s7166
+i"GL/glew.h"
+i"STShaderProgram.h"
+i"st.h"
+i<assert.h>
+i<string>
+i<fstream>
+i<sstream>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp
+c0000000050BC6BBF0000000000006302
+t1354525631
+s25346
+i"STShape.h"
+i"st.h"
+i"stgl.h"
+i<assert.h>
+i<stdio.h>
+i<map>
+i<math.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp
+c0000000050BC6BBF0000000000000B39
+t1354525631
+s2873
+i"STTexture.h"
+i"st.h"
+i"stgl.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp
+c0000000050BC6BBF000000000000047D
+t1354525631
+s1149
+i"STTimer.h"
+i<stdlib.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp
+c0000000050BC6BBF00000000000021E5
+t1354525631
+s8677
+i"STTransform4.h"
+i"STVector3.h"
+i"STPoint3.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp
+c0000000050BC6BBF00000000000000B8
+t1354525631
+s184
+i"STVector2.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp
+c0000000050BC6BBF00000000000000FC
+t1354525631
+s252
+i"STVector3.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STColor3f.h
+c0000000050BC6BBF00000000000005C2
+t1354525631
+s1474
+i"stForward.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STColor4f.h
+c0000000050BC6BBF0000000000000679
+t1354525631
+s1657
+i"stForward.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STColor4ub.h
+c0000000050BC6BBF000000000000038B
+t1354525631
+s907
+i"stForward.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STFont.h
+c0000000050BC6BBF0000000000000D1F
+t1354525631
+s3359
+i"stForward.h"
+i"STUtil.h"
+i<string>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STImage.h
+c0000000050BC6BBF0000000000001015
+t1354525631
+s4117
+i"STColor4ub.h"
+i"STUtil.h"
+i<string>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STJoystick.h
+c0000000050BC6BBF0000000000001473
+t1354525631
+s5235
+i<string>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STPoint2.h
+c0000000050BC6BBF000000000000046D
+t1354525631
+s1133
+i"stForward.h"
+i<math.h>
+i"STPoint2.inl"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STPoint3.h
+c0000000050BC6BBF0000000000000479
+t1354525631
+s1145
+i"stForward.h"
+i<math.h>
+i"STPoint3.inl"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STShaderProgram.h
+c0000000050BC6BBF00000000000006E2
+t1354525631
+s1762
+i"stgl.h"
+i<string>
+i"stForward.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STShape.h
+c0000000050BC6BBF00000000000019DF
+t1354525631
+s6623
+i"STColor3f.h"
+i"STPoint2.h"
+i"STPoint3.h"
+i"STTexture.h"
+i"STVector3.h"
+i<string>
+i<vector>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STTexture.h
+c0000000050BC6BBF0000000000000C8F
+t1354525631
+s3215
+i"stgl.h"
+i"STImage.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STTimer.h
+c0000000050BC6BBF000000000000030F
+t1354525631
+s783
+i<windows.h>
+i<sys/time.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STTransform4.h
+c0000000050BC6BBF000000000000072F
+t1354525631
+s1839
+i"stForward.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STUtil.h
+c0000000050BC6BBF00000000000006F9
+t1354525631
+s1785
+i<string>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STVector2.h
+c0000000050BC6BBF0000000000000A30
+t1354525631
+s2608
+i"stForward.h"
+i<math.h>
+i"STVector2.inl"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/STVector3.h
+c0000000050BC6BBF0000000000000A5F
+t1354525631
+s2655
+i"stForward.h"
+i<math.h>
+i"STVector3.inl"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/st.h
+c0000000050BC6BBF000000000000022E
+t1354525631
+s558
+i<string.h>
+i<stdexcept>
+i"stForward.h"
+i"STColor3f.h"
+i"STColor4f.h"
+i"STColor4ub.h"
+i"STFont.h"
+i"STImage.h"
+i"STJoystick.h"
+i"STPoint2.h"
+i"STPoint3.h"
+i"STShaderProgram.h"
+i"STShape.h"
+i"STTexture.h"
+i"STTimer.h"
+i"STUtil.h"
+i"STVector2.h"
+i"STVector3.h"
+i"STTransform4.h"
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/stForward.h
+c0000000050BC6BBF0000000000000298
+t1354525631
+s664
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../include/stgl.h
+c0000000050BC6BBF00000000000001BB
+t1354525631
+s443
+i<OpenGL/gl.h>
+i<OpenGL/glu.h>
+i<windows.h>
+i<GL/gl.h>
+i<GL/glu.h>
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/libst.a
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o
+t2
+s0
+
+N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/st.LinkFileList
+c0000000050BC6CF80000000000000AE5
+t1354525944
+s2789
+
+N/opt/local/include/freetype2/freetype/config/ftheader.h
+c000000004FDDB40A0000000000006207
+t1339929610
+s25095
+
+N/opt/local/include/ft2build.h
+c000000004FDDB40A0000000000000F32
+t1339929610
+s3890
+i<freetype/config/ftheader.h>
+
+N/opt/local/include/jconfig.h
+c000000004F4B85810000000000000650
+t1330349441
+s1616
+
+N/opt/local/include/jerror.h
+c000000004F4B858100000000000038F5
+t1330349441
+s14581
+
+N/opt/local/include/jmorecfg.h
+c000000004F4B8581000000000000310E
+t1330349441
+s12558
+
+N/opt/local/include/jpeglib.h
+c000000004F4B8581000000000000BDB9
+t1330349441
+s48569
+i"jconfig.h"
+i"jmorecfg.h"
+i"jpegint.h"
+i"jerror.h"
+
+N/opt/local/include/png.h
+c00000000506EA85B000000000001C56D
+t1349429339
+s116077
+i"pnglibconf.h"
+i<setjmp.h>
+i<time.h>
+i"pngconf.h"
+
+N/opt/local/include/pngconf.h
+c00000000506EA85B00000000000053C5
+t1349429339
+s21445
+i<limits.h>
+i<strings.h>
+i<string.h>
+i<stdio.h>
+i<dos.h>
+
+N/opt/local/include/pnglibconf.h
+c00000000506EA85B00000000000018E3
+t1349429339
+s6371
+
+N/usr/include/assert.h
+c000000004BBD2CE90000000000000DCB
+t1270689001
+s3531
+
+N/usr/include/ctype.h
+c000000004BBD2CE90000000000002C18
+t1270689001
+s11288
+
+N/usr/include/mach/mach.h
+c000000004BD247AA0000000000001057
+t1272072106
+s4183
+
+N/usr/include/mach/mach_error.h
+c000000004BD247AA0000000000000BE3
+t1272072106
+s3043
+
+N/usr/include/math.h
+c000000004AC599B500000000000004F1
+t1254463925
+s1265
+
+N/usr/include/setjmp.h
+c000000004BBD2CE90000000000000438
+t1270689001
+s1080
+
+N/usr/include/stdio.h
+c000000004BBD2CE90000000000004174
+t1270689001
+s16756
+
+N/usr/include/stdlib.h
+c000000004BBD2CE90000000000002DF5
+t1270689001
+s11765
+
+N/usr/include/string.h
+c000000004BBD2CE90000000000001731
+t1270689001
+s5937
+
+N/usr/include/strings.h
+c000000004BBD2CE90000000000000DA4
+t1270689001
+s3492
+
+N/usr/include/sys/_types.h
+c000000004CC3DE680000000000001845
+t1287904872
+s6213
+
+N/usr/include/sys/time.h
+c000000004CC3DE680000000000001E17
+t1287904872
+s7703
+
+N/usr/include/sysexits.h
+c000000004BBD2CE90000000000001560
+t1270689001
+s5472
+
+N/usr/include/time.h
+c000000004BBD2CE9000000000000178E
+t1270689001
+s6030
+
+N/usr/include/unistd.h
+c000000004BBD2CE9000000000000563E
+t1270689001
+s22078
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp
+r0
+
+CBuild AST from /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies7428bb78a46cb641^39b8f078a46cb641^---0#1#0#--18"Check dependencies
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.945813
+e376218746.467886
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp2f31f278a46cb641^76c6777aa46cb641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp0000000000000000^1425"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o ../STColor3f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.945886
+e376218746.602778
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp573ff278a46cb641^5d519a7aa46cb641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp0000000000000000^1425"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o ../STColor4f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.946172
+e376218746.592595
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cppb648f278a46cb641^96b3977aa46cb641^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp0000000000000000^1429"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o ../STColor4ub.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.946179
+e376218746.993186
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp8847f278a46cb641^b840fe7aa46cb641^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp0000000000000000^1413"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o ../STFont.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.469137
+e376218746.939964
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cppde39787aa46cb641^1f9ff07aa46cb641^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp0000000000000000^1417"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o ../STImage.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.947171
+e376218746.770079
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp2289f278a46cb641^3e23c57aa46cb641^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp0000000000000000^1437"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o ../STImage_jpeg.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.947214
+e376218746.778745
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cppbd8cf278a46cb641^755ac77aa46cb641^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp0000000000000000^1433"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o ../STImage_png.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.947529
+e376218746.740498
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cppc1aaf278a46cb641^7e90bd7aa46cb641^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp0000000000000000^1433"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o ../STImage_ppm.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.603779
+e376218746.940000
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cppccb39a7aa46cb641^76a6f07aa46cb641^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp0000000000000000^1429"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o ../STJoystick.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.593855
+e376218752.355142
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'IOReturn HIDCreateOpenDeviceInterface(io_object_t, recDevice*)':
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:190: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:194: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:200: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'IOReturn HIDCloseReleaseInterface(recDevice*)':
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:226: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:230: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'void HIDTopLevelElementHandler(const void*, void*)':
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:414: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:417: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'void HIDGetDeviceInfo(io_object_t, __CFDictionary*, recDevice*)':
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:448: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:456: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:460: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:478: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:481: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:483: warning: deprecated conversion from string constant to 'char*'
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'recDevice* HIDDisposeDevice(recDevice**)':
+o/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:552: warning: deprecated conversion from string constant to 'char*'
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp5e2c987aa46cb641^10ea5a80a46cb641^-3216"/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'IOReturn HIDCreateOpenDeviceInterface(io_object_t, recDevice*)':/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:190: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:194: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:200: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'IOReturn HIDCloseReleaseInterface(recDevice*)':/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:226: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:230: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'void HIDTopLevelElementHandler(const void*, void*)':/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:414: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:417: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'void HIDGetDeviceInfo(io_object_t, __CFDictionary*, recDevice*)':/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:448: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:456: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:460: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:478: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:481: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:483: warning: deprecated conversion from string constant to 'char*'/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp: In function 'recDevice* HIDDisposeDevice(recDevice**)':/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp:552: warning: deprecated conversion from string constant to 'char*'14(21%IDEActivityLogMessage2@53"Deprecated conversion from string constant to 'char*'-376218752#180#169#-1#-23%DVTTextDocumentLocation3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^189#18446744073709551615#189#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#349#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^193#18446744073709551615#193#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#518#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^199#18446744073709551615#199#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#850#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^225#18446744073709551615#225#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#1019#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^229#18446744073709551615#229#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#1356#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^413#18446744073709551615#413#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#1525#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^416#18446744073709551615#416#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#1875#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^447#18446744073709551615#447#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#2044#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^455#18446744073709551615#455#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#2213#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^459#18446744073709551615#459#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#2382#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^477#18446744073709551615#477#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#2551#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^480#18446744073709551615#480#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#2720#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^482#18446744073709551615#482#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--2@53"Deprecated conversion from string constant to 'char*'-376218752#3047#169#-1#-3@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^551#18446744073709551615#551#18446744073709551615#18446744073709551615#0#49"Deprecated conversion from string constant to '*'--0#0#0#-19%DVTDocumentLocation4@116"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp0000000000000000^1457"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o ../STJoystick_darwin.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.604390
+e376218746.863224
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp90dc9a7aa46cb641^6d01dd7aa46cb641^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp0000000000000000^1421"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o ../STPoint2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.741740
+e376218747.015309
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp8107be7aa46cb641^60ea037ba46cb641^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp0000000000000000^1421"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o ../STPoint3.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.771325
+e376218747.314753
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cppa393c57aa46cb641^7593507ba46cb641^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp0000000000000000^1449"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o ../STShaderProgram.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.779985
+e376218747.485139
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cppf6cfc77aa46cb641^01327c7ba46cb641^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp0000000000000000^1417"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o ../STShape.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.864563
+e376218747.191165
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp1d74dd7aa46cb641^13ef307ba46cb641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp0000000000000000^1425"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o ../STTexture.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.941260
+e376218747.003201
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cppd218f17aa46cb641^42d1007ba46cb641^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp0000000000000000^1417"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o ../STTimer.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.994402
+e376218747.211113
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp42b0fe7aa46cb641^5f0b367ba46cb641^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp0000000000000000^1437"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o ../STTransform4.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218746.941413
+e376218747.190894
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp3b1cf17aa46cb641^94dd307ba46cb641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp0000000000000000^1425"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o ../STVector2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o
+
+CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+s376218744.945758
+e376218746.602496
+r1
+xCompileC
+xbuild/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp8c2ff278a46cb641^b8409a7aa46cb641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp0000000000000000^1425"CompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o ../STVector3.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    setenv LANG en_US.US-ASCII    /Developer/usr/bin/llvm-gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -fasm-blocks -gdwarf-2 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/st.hmap -I../ext/glew/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/include -I/opt/local/include -I/opt/local/include/freetype2 -I/opt/local/include/freetype2/freetype -I/opt/local/include/freetype2/freetype/config -I/sw/include -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources/x86_64 -I/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/DerivedSources -F/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -c /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector3.cpp -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o
+
+CLibtool /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/libst.a normal x86_64
+s376218752.356379
+e376218752.457538
+r1
+xLibtool
+x/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/libst.a
+xnormal
+xx86_64
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Libtool build/Debug/libst.a normal x86_64274d5b80a46cb641^03e99680a46cb641^---0#0#0#--531"Libtool build/Debug/libst.a normal x86_64    cd /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode    /Developer/usr/bin/libtool -static -arch_only x86_64 -L/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug -filelist /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/st.LinkFileList -o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/libst.a
+
