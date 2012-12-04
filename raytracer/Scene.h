@@ -57,10 +57,14 @@ private:
 
     /* State variables */
     
+    // NOTE: Vectors are pointer to inits on the heap because they need
+    // to be dynamic, therefore, we can't pre-allocate for an overall
+    // Scene instance. The same thing goes for the string pointer for the
+    // output file name.
+    
     //Camera - Image plane
     Camera                          mCamera;
     ImagePlane*                     mImagePlane;
-    
     //Lights
     std::vector<PointLight>*         mPointLights;
     std::vector<DirectionalLight>*   mDirectionalLights;
@@ -82,7 +86,7 @@ private:
     int                              mBounceDepth;
     
     //File to save output
-    std::string                      mOutputFileName;
+    std::string*                     mOutputFileName;
 
 };
 

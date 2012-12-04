@@ -37,7 +37,7 @@ Scene::Scene(std::string sceneFilename) :
                                  0)),
     mShadowBias(    SHADOW_BIAS_DEFAULT),
     mBounceDepth(   BOUNCE_DEPTH_DEFAULT)
-    /* mOutputFilename later */
+    /* mOutputFilename later has to be a pointer since it is dynamic */
 
 {
     /** Initialization setup */
@@ -214,6 +214,7 @@ void Scene::ParsedCamera(const STPoint3& eye, const STVector3& up, const STPoint
 void Scene::ParsedOutput(int imgWidth, int imgHeight, const std::string& outputFilename)
 {
     mImagePlane = new ImagePlane(mCamera, imgWidth, imgHeight);
+    mOutputFileName = new std::string(outputFilename);
 }
 
 void Scene::ParsedBounceDepth(int depth)
