@@ -19,7 +19,7 @@ class DirectionalLight : protected Light
     
 public:
     //Ctor
-    DirectionalLight(float intensity, const STVector3& direction);
+    DirectionalLight(STColor3f color, const STVector3& direction);
     
     //Overide virtual
     STVector3 pointToLightVector(const STPoint3& pt) const;

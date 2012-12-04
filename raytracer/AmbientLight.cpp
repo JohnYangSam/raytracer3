@@ -11,8 +11,8 @@
 #include <iostream>
 #include <string>
 
-AmbientLight::AmbientLight(float intensity) :
-    Light(intensity)
+AmbientLight::AmbientLight(STColor3f color) :
+    Light(color)
 {}
 
 STVector3 AmbientLight::pointToLightVector(const STPoint3& pt) const

@@ -29,14 +29,17 @@ class Scene
 {
 public:
 	Scene(std::string sceneFilename);
-
+   
 	/** CS 148 TODO: Add methods for the scene to render itself, etc. **/
-
+    //Renders the scenes and returns the STImage created
+    STImage* render();
+    
+    
 private:
 
 	/** Parsing helpers **/
 	void Parse(std::string sceneFilename);
-	void BeganParsing();
+    void BeganParsing();
 	void FinishedParsing();
 	void ParsedCamera(const STPoint3& eye, const STVector3& up, const STPoint3& lookAt, float fovy, float aspect);
 	void ParsedOutput(int imgWidth, int imgHeight, const std::string& outputFilename);
@@ -57,26 +60,36 @@ private:
 
     /* State variables */
     
+    // NOTE: Vectors are pointer to inits on the heap because they need
+    // to be dynamic, therefore, we can't pre-allocate for an overall
+    // Scene instance. The same thing goes for the string pointer for the
+    // output file name.
+    
     //Camera - Image plane
     Camera                          mCamera;
     ImagePlane*                     mImagePlane;
-    
     //Lights
-    std::vector<PointLight>         mPointLights;
-    std::vector<DirectionalLight>   mDirectionalLights;
-    std::vector<AmbientLight>       mAmbientLights;
+    std::vector<PointLight>*         mPointLights;
+    std::vector<DirectionalLight>*   mDirectionalLights;
+    std::vector<AmbientLight>*       mAmbientLights;
     
     //Shapes
-    std::vector<Shape>              mShapes;
+    std::vector<SceneObject>*       mSceneObjects;
     
     //Matrix stack
-    std::stack<STTransform4>        mMatrixStack;
+    std::stack<STTransform4>*        mMatrixStack;
+    
+    //CurrentMaterial
+    Material                         mCurrMaterial;
+    
+    //Miscellaneous variables
+    int                              mShadowBias;
     
     //Bounce depth
-    int                             mBounceDepth;
+    int                              mBounceDepth;
     
     //File to save output
-    std::string                     mOutputFileName;
+    std::string*                     mOutputFileName;
 
 };
 
