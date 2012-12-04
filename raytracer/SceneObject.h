@@ -6,6 +6,7 @@
 //  Copyright 2012 Stanford University. All rights reserved.
 //
 #ifndef SCENEOBJECT_H
+#define SCENEOBJECT_H
 
 #include "st.h"
 #include "Shape.h"
@@ -14,15 +15,15 @@
 class SceneObject
 {
 public:
-    SceneObject( const Shape* const     shape,
-                 const Material&        material,
-                 const STTransform4&    transform);
+    SceneObject( Shape*          shape,
+                 Material        material,
+                 STTransform4    transform);
 
 private:
     
-    const Shape*        mShape;      // A pointer that can be reassigned
-    const Material      mMaterial;   // but the thing it is pointing to
-    const STTransform4  mTransform;  // cannot be modified
+    Shape*        mShape;      // A pointer that can be reassigned
+    Material      mMaterial;   // but the thing it is pointing to
+    STTransform4  mTransform;  // cannot be modified
 };
 
 

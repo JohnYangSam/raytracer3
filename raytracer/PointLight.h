@@ -25,7 +25,7 @@ public:
     ~PointLight();
     
 private:
-    const STPoint3 mPosition;
+    STPoint3 mPosition;
     
 };
 

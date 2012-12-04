@@ -9,7 +9,7 @@
 #include "Light.h"
 
 //Constructor initializes intensity with an initialization list element
-Light::Light(STColor3f color) :
+Light::Light(const STColor3f color) :
 mColor(color)
 {}
 

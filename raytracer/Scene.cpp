@@ -263,7 +263,7 @@ void Scene::ParsedSphere(const STPoint3& center, float radius)
 
 void Scene::ParsedTriangle(const STPoint3& v1, const STPoint3& v2, const STPoint3& v3)
 {
-    const Shape* const triangle = new Triangle(v1, v2, v3);
+    Shape* triangle = new Triangle(v1, v2, v3);
     STTransform4 currTransform = mMatrixStack->top();
     mSceneObjects->push_back(SceneObject(triangle, *mCurrMaterial, currTransform));
 }
@@ -289,6 +289,17 @@ void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const ST
     
 }
 
+/*
+ for each pixel in the bitmap
+    get the plane point
+    create a ray
+    use the ray to check an intersection with each object
+    for each intersection go through each light and compute the color shading
+ 
+ 
+ 
+ */
+
 
 STImage Scene::render() {
     //Get the bitmap height and width of the image being produced
@@ -299,12 +310,12 @@ STImage Scene::render() {
     //Iterate through the whole bitmap
     for(int i = 0; i < bitmapWidth; ++i) {
         for(int j = 0; j < bitmapHeight; ++j) {
-            
+            mImagePlane->
             
             
         }
     }
     
-   
-    return NULL;
+    //Place holder
+    return STImage(1, 1);
 }
