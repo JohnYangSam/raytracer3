@@ -15,9 +15,9 @@
 class SceneObject
 {
 public:
-    SceneObject( Shape*          shape,
-                 Material        material,
-                 STTransform4    transform);
+    SceneObject(       Shape*          shape,
+                 const Material        material,
+                 const STTransform4    transform);
 
 private:
     

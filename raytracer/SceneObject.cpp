@@ -8,9 +8,9 @@
 
 #include "SceneObject.h"
 
-SceneObject::SceneObject( Shape*           shape,
-                          Material         material,
-                          STTransform4     transform) :
+SceneObject::SceneObject(       Shape*           shape,
+                          const Material         material,
+                          const STTransform4     transform) :
     mShape(     shape),
     mMaterial(  material),
     mTransform( transform) 

@@ -310,8 +310,8 @@ STImage Scene::render() {
     //Iterate through the whole bitmap
     for(int i = 0; i < bitmapWidth; ++i) {
         for(int j = 0; j < bitmapHeight; ++j) {
-            mImagePlane->
-            
+            STPoint2 imagePlanePt = mImagePlane->
+            Ray cameraRay = mCamera->generateRay(imagePlanePt);
             
         }
     }

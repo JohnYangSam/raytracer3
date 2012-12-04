@@ -15,7 +15,7 @@ class Ray
 {
     
 public:
-    Ray(const STPoint3& point,
+    Ray(const STPoint2& point,
         const STPoint3& cameraEyePos,
         float minT = 0,
         float maxT = 0);
@@ -34,7 +34,7 @@ private:
     float mMinT;
     float mMaxT;
     STPoint3 e;
-    STVector3 d;
+    STVector3 d = 1; //
 };
 
 #endif
