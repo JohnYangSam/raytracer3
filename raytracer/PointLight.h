@@ -11,7 +11,7 @@
 #include "st.h"
 #include "Light.h"
 
-class PointLight : protected Light
+class PointLight : public Light
 {
     
 public:

@@ -14,7 +14,7 @@
 #include "st.h"
 #include "Light.h"
 
-class DirectionalLight : protected Light
+class DirectionalLight : public Light
 {
     
 public:
