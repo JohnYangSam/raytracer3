@@ -11,12 +11,7 @@
 
 #include "st.h"
 #include "ray.h"
-
-typedef struct Intersection {
-    float t;
-    STPoint3 intersectionPt;
-    STVector3 intersectionNormal;
-} Intersection;
+#include "Intersection.h"
 
 class Shape
 {
