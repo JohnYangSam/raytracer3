@@ -344,9 +344,39 @@ STImage Scene::render() {
                 
                 STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
+                
+                if(i == 364 && j == 369) {
+                    
+                    cout << "Intersection Pt: "
+                         << closestIntersection.intersectionPt.x << ","
+                         << closestIntersection.intersectionPt.y << ","
+                         << closestIntersection.intersectionPt.z << ")"
+                    << endl;
+                    
+                    cout << "Intersection Normal: "
+                         << closestIntersection.intersectionNormal.x << ","
+                         << closestIntersection.intersectionNormal.y << ","
+                         << closestIntersection.intersectionNormal.z << ")"
+                    << endl;
+                    
+                    cout << "Camera eye: "
+                         << cameraRay.getE().x << ","
+                         << cameraRay.getE().y << ","
+                         << cameraRay.getE().z << ")"
+                    << endl;
+                    
+                    cout << "Camera ray direction: "
+                         << cameraRay.getD().x << ","
+                         << cameraRay.getD().y << ","
+                         << cameraRay.getD().z << ")"
+                    << endl;
+                    
+                }
             } else {
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(0, 0, 0, 255));
             }
+            
+          
         }
         
         mImagePlane->saveToFile(*mOutputFileName);
