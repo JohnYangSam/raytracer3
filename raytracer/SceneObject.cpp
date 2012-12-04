@@ -14,8 +14,7 @@ SceneObject::SceneObject(       Shape*           shape,
                           const STTransform4     transform) :
     mShape(     shape),
     mMaterial(  material),
-    mTransform( transform),
-    mIntersection()
+    mTransform( transform)
 {
     
 }
