@@ -12,14 +12,20 @@
 #include <stglut.h>
 #include <string>
 
+#include "Scene.h"
+
 using namespace std;
 
 int main(int argc, const char * argv[])
 {
     cout << "Starting program" << endl;
-  
+   
+    //Create a scene
+    Scene scene = Scene(argv[1]);
+    //Render the scene and save the image
+    STImage renderedScene = scene.render();
     
-    for(int i = 0; i < )
+    //Display scene
     
     cout << "Program finished" << endl;
     

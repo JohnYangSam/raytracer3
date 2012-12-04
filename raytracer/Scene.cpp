@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Scene.h"
+#include "SceneObject.h"
 #include "Sphere.h"
 #include "Triangle.h"
 
@@ -30,7 +31,7 @@ Scene::Scene(std::string sceneFilename) :
     mAmbientLights(     new vector<AmbientLight>()),
     mSceneObjects(      new vector<SceneObject>()),
     mMatrixStack(       new stack<STTransform4>()),
-    mCurrMaterial(      Material(STColor3f(0.0f,0.0f,0.0f),
+    mCurrMaterial(      new Material(STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
@@ -205,15 +206,14 @@ void Scene::FinishedParsing()
     cout << "Finished parsing scene file." << endl;
 }
 
-
 void Scene::ParsedCamera(const STPoint3& eye, const STVector3& up, const STPoint3& lookAt, float fovy, float aspect)
 {
-    mCamera = Camera(eye, up, lookAt, fovy, aspect);
+    mCamera = new Camera(eye, up, lookAt, fovy, aspect);
 }
 
 void Scene::ParsedOutput(int imgWidth, int imgHeight, const std::string& outputFilename)
 {
-    mImagePlane = new ImagePlane(mCamera, imgWidth, imgHeight);
+    mImagePlane = new ImagePlane(*mCamera, imgWidth, imgHeight);
     mOutputFileName = new std::string(outputFilename);
 }
 
@@ -286,5 +286,11 @@ void Scene::ParsedDirectionalLight(const STVector3& dir, const STColor3f& col)
 void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const STColor3f& spec, const STColor3f& mirr, float shine)
 {
     mCurrMaterial = Material(amb, diff, spec, mirr, shine);
+    
+}
+
+STImage render() {
+    mImagePlane.
+    STImage image = new STImage(<#int width#>, <#int height#>)
     
 }

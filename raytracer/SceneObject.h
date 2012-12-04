@@ -14,14 +14,15 @@
 class SceneObject
 {
 public:
-    SceneObject( const Shape* const shape,
-                const Material& material,
-                const STTransform4& transform);
+    SceneObject( const Shape* const     shape,
+                 const Material&        material,
+                 const STTransform4&    transform);
 
 private:
-    Shape* mShape;
-    Material mMaterial;
-    STTransform4 mTransform;
+    
+    const Shape* mShape;            // A pointer that can be reassigned
+    const Material mMaterial;       // but the thing it is pointing to
+    const STTransform4 mTransform;  // cannot be modified
 };
 
 

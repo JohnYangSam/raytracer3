@@ -8,12 +8,12 @@
 
 #include "SceneObject.h"
 
-SceneObject::SceneObject( const Shape* const shape,
-                         const Material& material,
-                         const STTransform4& transform) :
-mShape((Shape *)shape),
-mMaterial(material),
-mTransform(transform) 
+SceneObject::SceneObject(   const Shape* const      shape,
+                            const Material&         material,
+                            const STTransform4&     transform) :
+    mShape(     shape),
+    mMaterial(  material),
+    mTransform( transform) 
 {
     
 }
