@@ -332,9 +332,9 @@ STImage Scene::render() {
                 
             }
             
-            Intersection closestIntersection = closestSceneObjPtr->getIntersection;
+            Intersection closestIntersection = closestSceneObjPtr->getIntersection();
             
-            STColor3 color = closestSceneObjPtr->getMaterial.getColor(
+            STColor3 color = closestSceneObjPtr->getMaterial.getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, mCamera, 
             
         }
     }

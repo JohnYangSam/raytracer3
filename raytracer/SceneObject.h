@@ -11,6 +11,7 @@
 #include "st.h"
 #include "Shape.h"
 #include "Material.h"
+#include "Intersection.h"
 
 class SceneObject
 {
