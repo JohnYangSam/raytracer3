@@ -3,6 +3,7 @@
 #include <sstream>
 #include <iostream>
 #include <string>
+#include <iterator>
 
 #include "Scene.h"
 #include "SceneObject.h"
@@ -310,8 +311,20 @@ STImage Scene::render() {
     //Iterate through the whole bitmap
     for(int i = 0; i < bitmapWidth; ++i) {
         for(int j = 0; j < bitmapHeight; ++j) {
-            STPoint2 imagePlanePt = mImagePlane->
+            STPoint2 imagePlanePt = mImagePlane->getImagePlane2DPoint(i, j);
             Ray cameraRay = mCamera->generateRay(imagePlanePt);
+            //Object
+            int sceneObjCount = mSceneObjects->size();
+            
+            float minT = -1.0f;
+            SceneObject* closestSceneObjPtr = NULL;
+            
+            
+            for(int o = 0; i < sceneObjCount; ++o) {
+                SceneObject sceneObject = mSceneObjects->at(o);
+                
+                
+            }
             
         }
     }

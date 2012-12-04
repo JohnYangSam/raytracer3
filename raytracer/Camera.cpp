@@ -63,9 +63,10 @@ void Camera::Initialize() {
     v = STVector3::Cross(w,u);
 }
 
-Ray Camera::generateRay(const STPoint3& pt) const
+Ray Camera::generateRay(const STPoint2& imagePlane2DPt) const
 {
-    return Ray(pt, mEye);
+    STVector3 direction = getW() + imagePlane2DPt.x * getU() + imagePlane2DPt.y * getV();
+    return Ray(direction, mEye);
 }
 
 STVector3 Camera::getU() const { return u; }

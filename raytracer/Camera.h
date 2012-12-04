@@ -36,7 +36,7 @@ public:
     
     //Generates and returns a ray class instance from the
     //camera to the inputted point
-    Ray generateRay(const STPoint3& pt) const;
+    Ray generateRay(const STPoint2& imagePlane2DPt) const;
     
     float getFovy() const{ return mFovy; }
     

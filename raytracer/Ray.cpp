@@ -8,7 +8,7 @@
 
 #include "Ray.h"
 
-Ray::Ray(const STPoint2& point,
+Ray::Ray(const STPoint3& point,
          const STPoint3& cameraEyePos,
          float minT,
          float maxT) :
@@ -19,8 +19,8 @@ Ray::Ray(const STPoint2& point,
     /* d initialized below */
 {
     //Create and normalize the d vector
-    d = ;
-    d.Normalize();
+    direction = STVector3(point - e);
+    direction.Normalize();
 }
 
 Ray::Ray(const STVector3& direction,
@@ -33,6 +33,6 @@ Ray::Ray(const STVector3& direction,
     e(cameraEyePos)
 {
     //Create and normalize the d vector
-    d = direction;
-    d.Normalize();
+    this->direction = direction;
+    this->direction.Normalize();
 }
