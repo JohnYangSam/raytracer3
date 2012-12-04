@@ -23,7 +23,7 @@ public:
     //Finds the intersection and stores it in the intersection
     //piece if it is a valid intersection.  
     bool intersection(Ray ray);
-    Intersection getIntersection() { return mIntersection; }
+    Intersection getIntersection();
     Material getMaterial() { return mMaterial; }
     Shape* getShapePtr() { return mShape; }
     STTransform4 getTransform() { return mTransform; }
@@ -33,8 +33,10 @@ private:
     Shape*        mShape;      // A pointer that can be reassigned
     Material      mMaterial;   // but the thing it is pointing to
     STTransform4  mTransform;  // cannot be modified
-    
-    Intersection mIntersection;
+
+    float t;
+    STPoint3 mInterPt;
+    STVector3 mInterNormal;
 };
 
 

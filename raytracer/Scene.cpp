@@ -30,7 +30,7 @@ Scene::Scene(std::string sceneFilename) :
     mPointLights(       new vector<PointLight>()),
     mDirectionalLights( new vector<DirectionalLight>()),
     mAmbientLights(     new vector<AmbientLight>()),
-    mSceneObjects(      new vector<SceneObject>()),
+    mSceneObjects(      new vector<SceneObject*>()),
     mMatrixStack(       new stack<STTransform4>()),
     mCurrMaterial(      new Material(STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
@@ -259,7 +259,9 @@ void Scene::ParsedSphere(const STPoint3& center, float radius)
 {
     Shape* sphere = new Sphere(center, radius);
     STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(SceneObject(sphere, *mCurrMaterial, currTransform));
+    mSceneObjects->push_back(new SceneObject(sphere, *mCurrMaterial, currTransform));
+    
+    cout << "Sphere created" << endl;
     
 }
 
@@ -267,7 +269,7 @@ void Scene::ParsedTriangle(const STPoint3& v1, const STPoint3& v2, const STPoint
 {
     Shape* triangle = new Triangle(v1, v2, v3);
     STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(SceneObject(triangle, *mCurrMaterial, currTransform));
+    mSceneObjects->push_back(new SceneObject(triangle, *mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedAmbientLight(const STColor3f& col)
@@ -309,35 +311,42 @@ STImage Scene::render() {
     int bitmapHeight = mImagePlane->getBitmapHeight();
     int bitmapWidth = mImagePlane->getBitmapWidth();
   
+    //Object
+    int sceneObjCount = mSceneObjects->size();
+    cout << "SceneObject count " << sceneObjCount << endl;
+    
     //Iterate through the whole bitmap
     for(int i = 0; i < bitmapWidth; ++i) {
-        cout << "one line down!" << i << endl;
+        cout << "one line down! " << i << endl;
         for(int j = 0; j < bitmapHeight; ++j) {
             STPoint2 imagePlanePt = mImagePlane->getImagePlane2DPoint(i, j);
             Ray cameraRay = mCamera->generateRay(imagePlanePt);
-            //Object
-            int sceneObjCount = mSceneObjects->size();
             
             float minT = std::numeric_limits<float>::infinity();
-            SceneObject* closestSceneObjPtr = NULL;
+            //SceneObject* closestSceneObjPtr = NULL;
+            int closestObjIndex = -1;
             
-            
-            for(int o = 0; i < sceneObjCount; ++o) {
-                SceneObject sceneObject = mSceneObjects->at(o);
-                if(sceneObject.intersection(cameraRay)) {
-                    Intersection hit = sceneObject.getIntersection();
+            for(int o = 0; o < sceneObjCount; ++o) {
+                SceneObject* sceneObjectPtr = mSceneObjects->at(o);
+                if(sceneObjectPtr->intersection(cameraRay)) {
+                    Intersection hit = sceneObjectPtr->getIntersection();
                     if(hit.t < minT) {
                         minT = hit.t;
-                        closestSceneObjPtr = &sceneObject;
+                        //closestSceneObjPtr = sceneObjectPtr;
+                        closestObjIndex = o;
                     }
                 }
                 
             }
             
-            Intersection closestIntersection = closestSceneObjPtr->getIntersection();
-            
-            STColor3f color = closestSceneObjPtr->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
-            mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
+            if(closestObjIndex != -1) {
+                Intersection closestIntersection = mSceneObjects->at(closestObjIndex)->getIntersection();
+                
+                STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
+                mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
+            } else {
+                mImagePlane->setBitmapPixel(i, j, STColor4ub(0, 0, 0, 255));
+            }
         }
         
         mImagePlane->saveToFile(*mOutputFileName);

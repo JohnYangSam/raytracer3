@@ -15,12 +15,34 @@ SceneObject::SceneObject(       Shape*           shape,
     mShape(     shape),
     mMaterial(  material),
     mTransform( transform),
-mIntersection(Intersection())
+    t(-1),
+    mInterPt(STPoint3(0,0,0)),
+    mInterNormal(STVector3(0,0,0))
 {
     
 }
 
 bool SceneObject::intersection(Ray ray)
 {
-    return mShape->findPointHit(ray, mIntersection);
+    Intersection inter = Intersection();
+    bool result     = mShape->findPointHit(ray, inter);
+    if(result) {
+        t               = inter.t;
+        mInterPt        = inter.intersectionPt;
+        mInterNormal    = inter.intersectionNormal;
+    }
+    
+    return result;
+}
+
+Intersection SceneObject::getIntersection()
+{
+    if (t == -1) {
+        std::cout << "There is a problem" << std::endl;
+    }
+    Intersection inter;
+    inter.t = t;
+    inter.intersectionPt = mInterPt;
+    inter.intersectionNormal = mInterNormal;
+    return inter;
 }

@@ -88,7 +88,7 @@ private:
     std::vector<AmbientLight>*      mAmbientLights;
     
     //Shapes
-    std::vector<SceneObject>*       mSceneObjects;
+    std::vector<SceneObject*>*       mSceneObjects;
     
     //Matrix stack
     std::stack<STTransform4>*       mMatrixStack;

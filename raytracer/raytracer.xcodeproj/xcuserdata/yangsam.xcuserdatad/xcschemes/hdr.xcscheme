@@ -44,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/yangsam/Development/cs148Other/assignment_6_hdr_images/stack4"
+      customWorkingDirectory = "/Users/yangsam/Development/cs148Other/assignment92"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
@@ -60,23 +60,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-response stack4.list response.cr"
+            argument = "./exampleScenes/SphereTest.txt"
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-create stack4.list response.cr photo_out.pfm"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-vp photo_out.pfm response.cr"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-view photo_out.pfm"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-tonemap photo_out.pfm"
+            argument = "./exampleScenes/CornellBox.txt"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
