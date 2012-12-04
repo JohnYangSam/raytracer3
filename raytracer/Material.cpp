@@ -40,6 +40,9 @@ STColor3f Material::getColor(STPoint3 intersection, STVector3 normal, Camera cam
 {
     STColor3f ambientIntensity = STColor3f(0.,0.,0.);
     for(int l = 0; l < aLights.size(); l++) {
-        //ambientIntensity += aLights[l].getIntensity();
+        ambientIntensity += aLights[l].getIntensity();
     }
+    STColor3f ambientTerm = mAmbient * ambientIntensity;
+    
+    
 }
