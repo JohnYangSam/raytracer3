@@ -29,14 +29,17 @@ class Scene
 {
 public:
 	Scene(std::string sceneFilename);
-
+   
 	/** CS 148 TODO: Add methods for the scene to render itself, etc. **/
-
+    //Renders the scenes and returns the STImage created
+    STImage* render();
+    
+    
 private:
 
 	/** Parsing helpers **/
 	void Parse(std::string sceneFilename);
-	void BeganParsing();
+    void BeganParsing();
 	void FinishedParsing();
 	void ParsedCamera(const STPoint3& eye, const STVector3& up, const STPoint3& lookAt, float fovy, float aspect);
 	void ParsedOutput(int imgWidth, int imgHeight, const std::string& outputFilename);
