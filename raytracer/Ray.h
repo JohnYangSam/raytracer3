@@ -27,14 +27,11 @@ public:
         float maxT = std::numeric_limits<float>::infinity());
 
     STPoint3 getE() const{ return e; }
-    STVector3 getD() const{ return d; } //D is the direction vector
+    STVector3 getD() const{ return direction; } //D is the direction vector
     float getMinT() const{ return mMinT; }
     float getMaxT() const{ return mMaxT; }
 
 private:
-    
-    const float d = 1;    // The length from the eye to the image
-                                // plane which is always 1 in this case
     float mMinT;
     float mMaxT;
     STPoint3 e;

@@ -22,6 +22,10 @@ public:
     //Finds the intersection and stores it in the intersection
     //piece if it is a valid intersection.  
     bool intersection(Ray ray);
+    Intersection getIntersection() { return mIntersection; }
+    Material getMaterial() { return mMaterial; }
+    Shape* getShapePtr() { return mShape; }
+    STTransform4 getTransform() { return mTransform; }
     
 private:
     

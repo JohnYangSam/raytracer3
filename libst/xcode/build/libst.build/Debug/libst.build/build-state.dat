@@ -6,21 +6,21 @@ cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o 
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor4ub.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
-cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_jpeg.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STFont.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_png.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage_ppm.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STImage.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
-cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
-cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint3.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STPoint2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShaderProgram.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STShape.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTexture.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTimer.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STVector2.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STTransform4.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
+cCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STJoystick_darwin.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 cLibtool /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/libst.a normal x86_64
 
 N/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
@@ -434,84 +434,84 @@ i<GL/gl.h>
 i<GL/glu.h>
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/Debug/libst.a
-t2
-s0
+t1354525952
+s1022256
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o
-t2
-s0
+t1354525946
+s19860
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4f.o
-t2
-s0
+t1354525946
+s19088
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor4ub.o
-t2
-s0
+t1354525946
+s12808
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STFont.o
-t2
-s0
+t1354525946
+s161172
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage.o
-t2
-s0
+t1354525946
+s35812
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_jpeg.o
-t2
-s0
+t1354525946
+s36168
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_png.o
-t2
-s0
+t1354525946
+s30696
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STImage_ppm.o
-t2
-s0
+t1354525946
+s26324
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick.o
-t2
-s0
+t1354525946
+s39864
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STJoystick_darwin.o
-t2
-s0
+t1354525952
+s53004
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint2.o
-t2
-s0
+t1354525946
+s6232
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STPoint3.o
-t2
-s0
+t1354525947
+s6328
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShaderProgram.o
-t2
-s0
+t1354525947
+s77452
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STShape.o
-t2
-s0
+t1354525947
+s377852
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTexture.o
-t2
-s0
+t1354525947
+s26224
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTimer.o
-t2
-s0
+t1354525947
+s4264
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STTransform4.o
-t2
-s0
+t1354525947
+s32344
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector2.o
-t2
-s0
+t1354525947
+s6572
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/STVector3.o
-t2
-s0
+t1354525946
+s6856
 
 N/Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/build/libst.build/Debug/libst.build/Objects-normal/x86_64/st.LinkFileList
 c0000000050BC6CF80000000000000AE5
@@ -711,7 +711,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies7428bb78a46cb641^39b8f078a46cb641^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciese962ff50016eb641^0c1e5652016eb641^---0#1#0#--18"Check dependencies
 
 CCompileC build/libst.build/Debug/libst.build/Objects-normal/x86_64/STColor3f.o /Users/katherinechen/Developer/cs148/assignment9real/raytracer3/libst/xcode/../STColor3f.cpp normal x86_64 c++ com.apple.compilers.llvmgcc42
 s376218744.945813

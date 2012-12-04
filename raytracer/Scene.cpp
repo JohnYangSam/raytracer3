@@ -316,15 +316,25 @@ STImage Scene::render() {
             //Object
             int sceneObjCount = mSceneObjects->size();
             
-            float minT = -1.0f;
+            float minT = std::numeric_limits<float>::infinity();
             SceneObject* closestSceneObjPtr = NULL;
             
             
             for(int o = 0; i < sceneObjCount; ++o) {
                 SceneObject sceneObject = mSceneObjects->at(o);
-                
+                if(sceneObject.intersection(cameraRay)) {
+                    Intersection hit = sceneObject.getIntersection();
+                    if(hit.t < minT) {
+                        minT = hit.t;
+                        closestSceneObjPtr = &sceneObject;
+                    }
+                }
                 
             }
+            
+            Intersection closestIntersection = closestSceneObjPtr->getIntersection;
+            
+            STColor3 color = closestSceneObjPtr->getMaterial.getColor(
             
         }
     }
