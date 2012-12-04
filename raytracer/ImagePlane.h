@@ -32,6 +32,13 @@ public:
     
     //Saves the STImage of the image plane to a file
     STStatus saveToFile(const std::string& filename);
+    
+    //Getters
+    int getBitmapHeight()   const;
+    int getBitmapWidth()    const;
+    
+    float getPlaneHeight()  const;
+    float getPlaneWidth()   const;
 
 private:
     //STImage bitmap dimensions

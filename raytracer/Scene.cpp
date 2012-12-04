@@ -258,14 +258,14 @@ void Scene::ParsedSphere(const STPoint3& center, float radius)
 {
     Shape* sphere = new Sphere(center, radius);
     STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(SceneObject(sphere, mCurrMaterial, currTransform));
+    mSceneObjects->push_back(SceneObject(sphere, *mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedTriangle(const STPoint3& v1, const STPoint3& v2, const STPoint3& v3)
 {
-    Shape* triangle = new Triangle(v1, v2, v3);
+    const Shape* const triangle = new Triangle(v1, v2, v3);
     STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(SceneObject(triangle, mCurrMaterial, currTransform));
+    mSceneObjects->push_back(SceneObject(triangle, *mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedAmbientLight(const STColor3f& col)
@@ -285,12 +285,26 @@ void Scene::ParsedDirectionalLight(const STVector3& dir, const STColor3f& col)
 
 void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const STColor3f& spec, const STColor3f& mirr, float shine)
 {
-    mCurrMaterial = Material(amb, diff, spec, mirr, shine);
+    mCurrMaterial = new Material(amb, diff, spec, mirr, shine);
     
 }
 
-STImage render() {
-    mImagePlane.
-    STImage image = new STImage(<#int width#>, <#int height#>)
+
+STImage Scene::render() {
+    //Get the bitmap height and width of the image being produced
+    //from the image plane
+    int bitmapHeight = mImagePlane->getBitmapHeight();
+    int bitmapWidth = mImagePlane->getBitmapWidth();
+  
+    //Iterate through the whole bitmap
+    for(int i = 0; i < bitmapWidth; ++i) {
+        for(int j = 0; j < bitmapHeight; ++j) {
+            
+            
+            
+        }
+    }
     
+   
+    return NULL;
 }

@@ -20,9 +20,9 @@ public:
 
 private:
     
-    const Shape* mShape;            // A pointer that can be reassigned
-    const Material mMaterial;       // but the thing it is pointing to
-    const STTransform4 mTransform;  // cannot be modified
+    const Shape*        mShape;      // A pointer that can be reassigned
+    const Material      mMaterial;   // but the thing it is pointing to
+    const STTransform4  mTransform;  // cannot be modified
 };
 
 
