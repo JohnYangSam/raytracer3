@@ -7,13 +7,20 @@
 //
 
 #include "SceneObject.h"
+#include "shape.h"
 
 SceneObject::SceneObject(       Shape*           shape,
                           const Material         material,
                           const STTransform4     transform) :
     mShape(     shape),
     mMaterial(  material),
-    mTransform( transform) 
+    mTransform( transform),
+    mIntersection(Intersection())
 {
     
+}
+
+bool SceneObject::intersection(Ray ray)
+{
+    return mShape->findPointHit(ray, mIntersection);
 }

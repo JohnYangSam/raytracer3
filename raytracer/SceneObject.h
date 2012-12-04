@@ -18,12 +18,18 @@ public:
     SceneObject(       Shape*          shape,
                  const Material        material,
                  const STTransform4    transform);
-
+    
+    //Finds the intersection and stores it in the intersection
+    //piece if it is a valid intersection.  
+    bool intersection(Ray ray);
+    
 private:
     
     Shape*        mShape;      // A pointer that can be reassigned
     Material      mMaterial;   // but the thing it is pointing to
     STTransform4  mTransform;  // cannot be modified
+    
+    Intersection mIntersection;
 };
 
 
