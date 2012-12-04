@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Scene.h"
+#include "SceneObject.h"
 #include "Sphere.h"
 #include "Triangle.h"
 
@@ -30,7 +31,7 @@ Scene::Scene(std::string sceneFilename) :
     mAmbientLights(     new vector<AmbientLight>()),
     mSceneObjects(      new vector<SceneObject>()),
     mMatrixStack(       new stack<STTransform4>()),
-    mCurrMaterial(      Material(STColor3f(0.0f,0.0f,0.0f),
+    mCurrMaterial(      new Material(STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
@@ -205,15 +206,14 @@ void Scene::FinishedParsing()
     cout << "Finished parsing scene file." << endl;
 }
 
-
 void Scene::ParsedCamera(const STPoint3& eye, const STVector3& up, const STPoint3& lookAt, float fovy, float aspect)
 {
-    mCamera = Camera(eye, up, lookAt, fovy, aspect);
+    mCamera = new Camera(eye, up, lookAt, fovy, aspect);
 }
 
 void Scene::ParsedOutput(int imgWidth, int imgHeight, const std::string& outputFilename)
 {
-    mImagePlane = new ImagePlane(mCamera, imgWidth, imgHeight);
+    mImagePlane = new ImagePlane(*mCamera, imgWidth, imgHeight);
     mOutputFileName = new std::string(outputFilename);
 }
 
@@ -258,14 +258,14 @@ void Scene::ParsedSphere(const STPoint3& center, float radius)
 {
     Shape* sphere = new Sphere(center, radius);
     STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(SceneObject(sphere, mCurrMaterial, currTransform));
+    mSceneObjects->push_back(SceneObject(sphere, *mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedTriangle(const STPoint3& v1, const STPoint3& v2, const STPoint3& v3)
 {
-    Shape* triangle = new Triangle(v1, v2, v3);
+    const Shape* const triangle = new Triangle(v1, v2, v3);
     STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(SceneObject(triangle, mCurrMaterial, currTransform));
+    mSceneObjects->push_back(SceneObject(triangle, *mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedAmbientLight(const STColor3f& col)
@@ -285,6 +285,26 @@ void Scene::ParsedDirectionalLight(const STVector3& dir, const STColor3f& col)
 
 void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const STColor3f& spec, const STColor3f& mirr, float shine)
 {
-    mCurrMaterial = Material(amb, diff, spec, mirr, shine);
+    mCurrMaterial = new Material(amb, diff, spec, mirr, shine);
     
+}
+
+
+STImage Scene::render() {
+    //Get the bitmap height and width of the image being produced
+    //from the image plane
+    int bitmapHeight = mImagePlane->getBitmapHeight();
+    int bitmapWidth = mImagePlane->getBitmapWidth();
+  
+    //Iterate through the whole bitmap
+    for(int i = 0; i < bitmapWidth; ++i) {
+        for(int j = 0; j < bitmapHeight; ++j) {
+            
+            
+            
+        }
+    }
+    
+   
+    return NULL;
 }

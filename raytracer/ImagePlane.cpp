@@ -71,3 +71,9 @@ STStatus ImagePlane::saveToFile(const std::string& filename)
 {
     return mImage->Save(filename);
 }
+
+int ImagePlane::getBitmapHeight()  const { return mBitmapImageHeight; }
+int ImagePlane::getBitmapWidth()   const { return mBitmapImageWidth;  }
+
+float ImagePlane::getPlaneHeight() const { return mImagePlaneHeight; }
+float ImagePlane::getPlaneWidth()  const { return mImagePlaneWidth;  }

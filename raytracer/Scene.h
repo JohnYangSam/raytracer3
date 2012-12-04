@@ -13,6 +13,7 @@
 
 #include "Camera.h"
 #include "ImagePlane.h"
+#include "SceneObject.h"
 
 //Lighting
 #include "Light.h"
@@ -32,7 +33,7 @@ public:
    
 	/** CS 148 TODO: Add methods for the scene to render itself, etc. **/
     //Renders the scenes and returns the STImage created
-    STImage* render();
+    STImage render();
     
     
 private:
@@ -66,30 +67,32 @@ private:
     // output file name.
     
     //Camera - Image plane
-    Camera                          mCamera;
+    Camera*                         mCamera;
     ImagePlane*                     mImagePlane;
+    
+    //CurrentMaterial
+    Material*                       mCurrMaterial;
+    
+    //Miscellaneous variables
+    int                             mShadowBias;
+    
+    //Bounce depth
+    int                             mBounceDepth;
+    
+    //File to save output
+    std::string*                    mOutputFileName;
+    
     //Lights
-    std::vector<PointLight>*         mPointLights;
-    std::vector<DirectionalLight>*   mDirectionalLights;
-    std::vector<AmbientLight>*       mAmbientLights;
+    std::vector<PointLight>*        mPointLights;
+    std::vector<DirectionalLight>*  mDirectionalLights;
+    std::vector<AmbientLight>*      mAmbientLights;
     
     //Shapes
     std::vector<SceneObject>*       mSceneObjects;
     
     //Matrix stack
-    std::stack<STTransform4>*        mMatrixStack;
+    std::stack<STTransform4>*       mMatrixStack;
     
-    //CurrentMaterial
-    Material                         mCurrMaterial;
-    
-    //Miscellaneous variables
-    int                              mShadowBias;
-    
-    //Bounce depth
-    int                              mBounceDepth;
-    
-    //File to save output
-    std::string*                     mOutputFileName;
 
 };
 
