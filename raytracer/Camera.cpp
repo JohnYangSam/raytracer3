@@ -48,7 +48,7 @@ Camera::Camera( float ex, float ey, float ez,
 //initialization list
 void Camera::Initialize() {
     //Calculate a (the direction 
-    STVector3 a = STVector3(mLookAt - mEye);
+    STVector3 a = (-1.0f)*STVector3(mLookAt - mEye);
     STVector3 b = mUp;
     
     //Normalize a to w
