@@ -7,7 +7,7 @@
 //
 
 #include "ImagePlane.h"
-#define HALF_PIXEL 0.05f
+#define HALF_PIXEL 0.5f
 
 ImagePlane::ImagePlane(const Camera& camera,
                        int imgWidth,

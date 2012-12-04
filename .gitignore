@@ -1,4 +1,10 @@
-tignore file for Xcode4 / OS X Source projects
+#gitignore for assignment specific files
+*.png
+
+
+
+
+#gitignore file for Xcode4 / OS X Source projects
 #From https://gist.github.com/3786883
 #
 # NB: if you are storing "built" products, this WILL NOT WORK,
