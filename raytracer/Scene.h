@@ -61,17 +61,23 @@ private:
 
     /* State variables */
     
-    // NOTE: Vectors are pointer to inits on the heap because they need
+    
+    // CORRECTION ON THE BELOW NOTE: The note would be true in C, but
+    // beacuse C++ containers are really wrappers around heap pointers
+    // we can actually use these as fixed pieces in SceneObject.
+    
+    // NOTE (SEE ABOVE CORRECTION - THIS IS WRONG!):
+    // Vectors are pointer to inits on the heap because they need
     // to be dynamic, therefore, we can't pre-allocate for an overall
     // Scene instance. The same thing goes for the string pointer for the
     // output file name.
     
     //Camera - Image plane
-    Camera*                         mCamera;
-    ImagePlane*                     mImagePlane;
+    Camera                         mCamera;
+    ImagePlane                     mImagePlane;
     
     //CurrentMaterial
-    Material*                       mCurrMaterial;
+    Material                       mCurrMaterial;
     
     //Miscellaneous variables
     int                             mShadowBias;
@@ -80,18 +86,18 @@ private:
     int                             mBounceDepth;
     
     //File to save output
-    std::string*                    mOutputFileName;
+    std::string                    mOutputFileName;
     
     //Lights
-    std::vector<PointLight>*        mPointLights;
-    std::vector<DirectionalLight>*  mDirectionalLights;
-    std::vector<AmbientLight>*      mAmbientLights;
+    std::vector<PointLight>        mPointLights;
+    std::vector<DirectionalLight>  mDirectionalLights;
+    std::vector<AmbientLight>      mAmbientLights;
     
     //Shapes
-    std::vector<SceneObject*>*       mSceneObjects;
+    std::vector<SceneObject>       mSceneObjects;
     
     //Matrix stack
-    std::stack<STTransform4>*       mMatrixStack;
+    std::stack<STTransform4>       mMatrixStack;
     
 
 };

@@ -28,12 +28,12 @@ Scene::Scene(std::string sceneFilename) :
      * this case, but if we wanted to initialize them to fixed
      * sizes with constants, this is where we would do it
      */
-    mPointLights(       new vector<PointLight>()),
-    mDirectionalLights( new vector<DirectionalLight>()),
-    mAmbientLights(     new vector<AmbientLight>()),
-    mSceneObjects(      new vector<SceneObject*>()),
-    mMatrixStack(       new stack<STTransform4>()),
-    mCurrMaterial(      new Material(STColor3f(0.0f,0.0f,0.0f),
+    mPointLights(       vector<PointLight>()),
+    mDirectionalLights( vector<DirectionalLight>()),
+    mAmbientLights(     vector<AmbientLight>()),
+    mSceneObjects(      vector<SceneObject>()),
+    mMatrixStack(       stack<STTransform4>()),
+    mCurrMaterial(      Material(STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
                                  STColor3f(0.0f,0.0f,0.0f),
@@ -46,7 +46,7 @@ Scene::Scene(std::string sceneFilename) :
     /** Initialization setup */
     
     //Initialze matrix stack with the identity matrix
-    mMatrixStack->push(STTransform4::Identity());
+    mMatrixStack.push(STTransform4::Identity());
     
 	Parse(sceneFilename);
 }
@@ -210,13 +210,13 @@ void Scene::FinishedParsing()
 
 void Scene::ParsedCamera(const STPoint3& eye, const STVector3& up, const STPoint3& lookAt, float fovy, float aspect)
 {
-    mCamera = new Camera(eye, up, lookAt, fovy, aspect);
+    mCamera = Camera(eye, up, lookAt, fovy, aspect);
 }
 
 void Scene::ParsedOutput(int imgWidth, int imgHeight, const std::string& outputFilename)
 {
-    mImagePlane = new ImagePlane(*mCamera, imgWidth, imgHeight);
-    mOutputFileName = new std::string(outputFilename);
+    mImagePlane = ImagePlane(mCamera, imgWidth, imgHeight);
+    mOutputFileName = std::string(outputFilename);
 }
 
 void Scene::ParsedBounceDepth(int depth)
@@ -232,35 +232,35 @@ void Scene::ParsedShadowBias(float bias)
 void Scene::ParsedPushMatrix()
 {
     //Make a copy of the current matrix and push it on the stack
-    STTransform4 transformCopy = STTransform4(mMatrixStack->top());
-    mMatrixStack->push(transformCopy);
+    STTransform4 transformCopy = STTransform4(mMatrixStack.top());
+    mMatrixStack.push(transformCopy);
 }
 
 void Scene::ParsedPopMatrix()
 {
-    mMatrixStack->pop();
+    mMatrixStack.pop();
 }
 
 void Scene::ParsedRotate(float rx, float ry, float rz)
 {
-    mMatrixStack->top() = (mMatrixStack->top() * STTransform4::Rotation(rx, ry, rz));
+    mMatrixStack.top() = (mMatrixStack.top() * STTransform4::Rotation(rx, ry, rz));
 }
 
 void Scene::ParsedScale(float sx, float sy, float sz)
 {
-    mMatrixStack->top() = (mMatrixStack->top() *STTransform4::Scaling(sx, sy, sz));
+    mMatrixStack.top() = (mMatrixStack.top() *STTransform4::Scaling(sx, sy, sz));
 }
 
 void Scene::ParsedTranslate(float tx, float ty, float tz)
 {
-    mMatrixStack->top() = (mMatrixStack->top() * STTransform4::Translation(tx, ty, tz));
+    mMatrixStack.top() = (mMatrixStack.top() * STTransform4::Translation(tx, ty, tz));
 }
 
 void Scene::ParsedSphere(const STPoint3& center, float radius)
 {
     Shape* sphere = new Sphere(center, radius);
-    STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(new SceneObject(sphere, *mCurrMaterial, currTransform));
+    STTransform4 currTransform = mMatrixStack.top();
+    mSceneObjects.push_back(SceneObject(sphere, mCurrMaterial, currTransform));
     
     cout << "Sphere created" << endl;
     
@@ -269,29 +269,29 @@ void Scene::ParsedSphere(const STPoint3& center, float radius)
 void Scene::ParsedTriangle(const STPoint3& v1, const STPoint3& v2, const STPoint3& v3)
 {
     Shape* triangle = new Triangle(v1, v2, v3);
-    STTransform4 currTransform = mMatrixStack->top();
-    mSceneObjects->push_back(new SceneObject(triangle, *mCurrMaterial, currTransform));
+    STTransform4 currTransform = mMatrixStack.top();
+    mSceneObjects.push_back(SceneObject(triangle, mCurrMaterial, currTransform));
 }
 
 void Scene::ParsedAmbientLight(const STColor3f& col)
 {
-    mAmbientLights->push_back(AmbientLight(col));
+    mAmbientLights.push_back(AmbientLight(col));
 }
 
 void Scene::ParsedPointLight(const STPoint3& loc, const STColor3f& col)
 {
-    STTransform4 currTransform = mMatrixStack->top();
-    mPointLights->push_back(PointLight(col, loc, currTransform));
+    STTransform4 currTransform = mMatrixStack.top();
+    mPointLights.push_back(PointLight(col, loc, currTransform));
 }
 
 void Scene::ParsedDirectionalLight(const STVector3& dir, const STColor3f& col)
 {
-    mDirectionalLights->push_back(DirectionalLight(col, dir));
+    mDirectionalLights.push_back(DirectionalLight(col, dir));
 }
 
 void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const STColor3f& spec, const STColor3f& mirr, float shine)
 {
-    mCurrMaterial = new Material(amb, diff, spec, mirr, shine);
+    mCurrMaterial = Material(amb, diff, spec, mirr, shine);
     
 }
 
@@ -308,28 +308,28 @@ void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const ST
 STImage Scene::render() {
     //Get the bitmap height and width of the image being produced
     //from the image plane
-    int bitmapHeight = mImagePlane->getBitmapHeight();
-    int bitmapWidth = mImagePlane->getBitmapWidth();
+    int bitmapHeight = mImagePlane.getBitmapHeight();
+    int bitmapWidth = mImagePlane.getBitmapWidth();
   
     //Object
-    int sceneObjCount = mSceneObjects->size();
+    int sceneObjCount = mSceneObjects.size();
     cout << "SceneObject count " << sceneObjCount << endl;
     
     //Iterate through the whole bitmap
     for(int i = bitmapWidth - 1; i >= 0; --i) {
         cout << "one line down! " << i << endl;
         for(int j = bitmapHeight - 1; j >= 0; --j) {
-            STPoint3 imagePlanePt = mImagePlane->getImagePlanePoint(i, j);
-            Ray cameraRay = mCamera->generateRay(imagePlanePt);
+            STPoint3 imagePlanePt = mImagePlane.getImagePlanePoint(i, j);
+            Ray cameraRay = mCamera.generateRay(imagePlanePt);
             
             float minT = std::numeric_limits<float>::infinity();
             //SceneObject* closestSceneObjPtr = NULL;
             int closestObjIndex = -1;
             
             for(int o = 0; o < sceneObjCount; ++o) {
-                SceneObject* sceneObjectPtr = mSceneObjects->at(o);
-                if(sceneObjectPtr->intersection(cameraRay)) {
-                    Intersection hit = sceneObjectPtr->getIntersection();
+                SceneObject sceneObject = mSceneObjects.at(o);
+                if(sceneObject.intersection(cameraRay)) {
+                    Intersection hit = sceneObject.getIntersection();
                     if(hit.t < minT) {
                         minT = hit.t;
                         //closestSceneObjPtr = sceneObjectPtr;
@@ -340,10 +340,10 @@ STImage Scene::render() {
             }
             
             if(closestObjIndex != -1) {
-                Intersection closestIntersection = mSceneObjects->at(closestObjIndex)->getIntersection();
+                Intersection closestIntersection = mSceneObjects.at(closestObjIndex).getIntersection();
                 
-                STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
-                mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
+                STColor3f color = mSceneObjects.at(closestObjIndex).getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, mCamera, mPointLights, mDirectionalLights, mAmbientLights);
+                mImagePlane.setBitmapPixel(i, j, STColor4ub(color));
                 
                 if(i == 256 && j == 256) {
                     
@@ -372,51 +372,51 @@ STImage Scene::render() {
                     << endl;
                     
                     cout << setw(25) << "mCamera eye: " << "("
-                         << mCamera->getEye().x << ","
-                         << mCamera->getEye().y << ","
-                         << mCamera->getEye().z << ")"
+                         << mCamera.getEye().x << ","
+                         << mCamera.getEye().y << ","
+                         << mCamera.getEye().z << ")"
                     << endl;
                    
                     cout << setw(25) << "mCamera u, v, w: " << endl
                     
                          << setw(25) <<"u: " << "("
-                         << mCamera->getU().x << ","
-                         << mCamera->getU().y << ","
-                         << mCamera->getU().z << ")"
+                         << mCamera.getU().x << ","
+                         << mCamera.getU().y << ","
+                         << mCamera.getU().z << ")"
                          << endl
                     
                          << setw(25) << "v: " << "("
-                         << mCamera->getV().x << ","
-                         << mCamera->getV().y << ","
-                         << mCamera->getV().z << ")"
+                         << mCamera.getV().x << ","
+                         << mCamera.getV().y << ","
+                         << mCamera.getV().z << ")"
                          << endl
                     
                          << setw(25) << "w: " << "("
-                         << mCamera->getW().x << ","
-                         << mCamera->getW().y << ","
-                         << mCamera->getW().z << ")"
+                         << mCamera.getW().x << ","
+                         << mCamera.getW().y << ","
+                         << mCamera.getW().z << ")"
                         << endl << endl
                     
                          << "mCamera fovy and aspect: " << endl
-                         << setw(25) << "fovy: " << mCamera->getFovy() << endl
-                         << setw(25) << "aspect: " << mCamera->getAspect()
+                         << setw(25) << "fovy: " << mCamera.getFovy() << endl
+                         << setw(25) << "aspect: " << mCamera.getAspect()
                     << endl;
                     
 
                     
                 }
             } else {
-                mImagePlane->setBitmapPixel(i, j, STColor4ub(0, 0, 0, 255));
+                mImagePlane.setBitmapPixel(i, j, STColor4ub(0, 0, 0, 255));
             }
             
         }
         
-        mImagePlane->setBitmapPixel(110, 110, STColor4ub(255, 0, 0));
-        mImagePlane->setBitmapPixel(111, 111, STColor4ub(255, 0, 0));
-        mImagePlane->setBitmapPixel(109, 109, STColor4ub(255, 0, 0));
-        mImagePlane->setBitmapPixel(108, 108, STColor4ub(255, 0, 0));
+        mImagePlane.setBitmapPixel(110, 110, STColor4ub(255, 0, 0));
+        mImagePlane.setBitmapPixel(111, 111, STColor4ub(255, 0, 0));
+        mImagePlane.setBitmapPixel(109, 109, STColor4ub(255, 0, 0));
+        mImagePlane.setBitmapPixel(108, 108, STColor4ub(255, 0, 0));
     }
-    mImagePlane->saveToFile(*mOutputFileName);
+    mImagePlane.saveToFile(mOutputFileName);
     //Place holder
     return STImage(1, 1);
 }
