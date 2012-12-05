@@ -61,6 +61,9 @@ void Camera::Initialize() {
    
     //v is already normalized
     v = STVector3::Cross(w,u);
+   
+    //Convert field of view to radians!
+    mFovy = DegreesToRadians(mFovy);
 }
 
 Ray Camera::generateRay(const STPoint2& imagePlane2DPt) const

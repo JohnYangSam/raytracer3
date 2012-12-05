@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <iterator>
 
@@ -300,8 +301,6 @@ void Scene::ParsedMaterial(const STColor3f& amb, const STColor3f& diff, const ST
     use the ray to check an intersection with each object
     for each intersection go through each light and compute the color shading
  
- 
- 
  */
 
 
@@ -345,9 +344,9 @@ STImage Scene::render() {
                 STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
                 
-                if(i == 364 && j == 369) {
+                if(i == 349 && j == 371) {
                     
-                    cout << "Intersection Pt: "
+                    cout << "Intersection Pt: " << setw(5)
                          << closestIntersection.intersectionPt.x << ","
                          << closestIntersection.intersectionPt.y << ","
                          << closestIntersection.intersectionPt.z << ")"
@@ -376,7 +375,6 @@ STImage Scene::render() {
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(0, 0, 0, 255));
             }
             
-          
         }
         
         mImagePlane->saveToFile(*mOutputFileName);
