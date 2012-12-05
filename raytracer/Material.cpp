@@ -42,7 +42,7 @@ float max(float a, float b) {
 }
 
 bool occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vector<SceneObject*> sceneObjects) {
-    Ray rayToLightSource = Ray(pointToLightSource, pt, 0, pointToLightSource.Length());
+    Ray rayToLightSource = Ray(pointToLightSource, pt, 0.01, 1);
     for(int o = 0; o < sceneObjects.size(); ++o) {
         SceneObject* sceneObjectPtr = sceneObjects.at(o);
         if(sceneObjectPtr->intersection(rayToLightSource)) {
