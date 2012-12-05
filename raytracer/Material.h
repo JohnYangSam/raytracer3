@@ -15,6 +15,7 @@
 #include "AmbientLight.h"
 #include "PointLight.h"
 #include "Camera.h"
+#include "SceneObject.h"
 
 class Material
 {
@@ -38,7 +39,7 @@ public:
     STColor3f getSpecular() const { return mSpecular; }
     STColor3f getMirror()   const { return mMirror;   }
     
-    STColor3f getColor(STPoint3 intersection, STVector3 normal, Camera camera, std::vector<PointLight>* pLights, std::vector<DirectionalLight>* dLights, std::vector<AmbientLight>* aLights);
+    STColor3f getColor(STPoint3 intersection, STVector3 normal, Camera camera, std::vector<PointLight> pLights, std::vector<DirectionalLight> dLights, std::vector<AmbientLight> aLights, std::vector<SceneObject*> sceneObjects);
 
     
 private:  
