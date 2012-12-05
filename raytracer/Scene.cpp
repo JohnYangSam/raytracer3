@@ -320,6 +320,8 @@ STImage Scene::render() {
     for(int i = bitmapWidth - 1; i >= 0; --i) {
         cout << "one line down! " << i << endl;
         for(int j = bitmapHeight - 1; j >= 0; --j) {
+            
+            
             STPoint3 imagePlanePt = mImagePlane->getImagePlanePoint(i, j);
             Ray cameraRay = mCamera->generateRay(imagePlanePt);
             
@@ -333,7 +335,6 @@ STImage Scene::render() {
                     Intersection hit = sceneObjectPtr->getIntersection();
                     if(hit.t < minT) {
                         minT = hit.t;
-                        //closestSceneObjPtr = sceneObjectPtr;
                         closestObjIndex = o;
                     }
                 }
@@ -341,11 +342,13 @@ STImage Scene::render() {
             }
             
             if(closestObjIndex != -1) {
-                Intersection closestIntersection = mSceneObjects->at(closestObjIndex)->getIntersection();
                 
-                STColor3f color = getColor(mSceneObjects->at(closestObjIndex)->getMaterial(), closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights, *mSceneObjects, mBounceDepth);
+                SceneObject* object = mSceneObjects->at(closestObjIndex);
+                Intersection closestIntersection = object->getIntersection();
+                
+                STColor3f color = getColor(object->getMaterial(), closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights, *mSceneObjects, mBounceDepth);
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
-                
+              
                 if(i == 463 && j == 401) {
                     
                     cout << setw(25) << "Intersection Pt: " << "("
@@ -436,7 +439,7 @@ bool Scene::occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vecto
 //Static so we don't have problems with this being included in multiple .o files
 float Scene::max(float a, float b) { return a > b ? a : b; }
 
-STColor3f Scene::getColor(          Material material,
+STColor3f Scene::getColor(   Material material,
                              STPoint3 intersection,
                              STVector3 normal, 
                              Camera camera, 
@@ -446,6 +449,7 @@ STColor3f Scene::getColor(          Material material,
                              std::vector<SceneObject*> sceneObjects,
                              int bounceDepth)
 {
+    if (bounceDepth == 0) return STColor3f(0,0,0);
     STColor3f ambientTerm = STColor3f(0.,0.,0.);
     STColor3f diffuseTerm = STColor3f(0.,0.,0.);
     STColor3f specularTerm = STColor3f(0.,0.,0.);
