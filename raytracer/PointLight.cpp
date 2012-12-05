@@ -7,6 +7,10 @@
 //
 
 #include "PointLight.h"
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 PointLight::PointLight(STColor3f color, const STPoint3& positionPt) :
     Light(color),
@@ -20,6 +24,7 @@ STVector3 PointLight::pointToLightVector(const STPoint3& pt) const
     //Normalize
     result.Normalize();
     return result;
+    
 }
 
 PointLight::~PointLight()

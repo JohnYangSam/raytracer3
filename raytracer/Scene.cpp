@@ -315,10 +315,10 @@ STImage Scene::render() {
     cout << "SceneObject count " << sceneObjCount << endl;
     
     //Iterate through the whole bitmap
-    for(int i = 0; i < bitmapWidth; ++i) {
+    for(int i = bitmapWidth - 1; i >= 0; --i) {
         cout << "one line down! " << i << endl;
-        for(int j = 0; j < bitmapHeight; ++j) {
-            STPoint2 imagePlanePt = mImagePlane->getImagePlane2DPoint(i, j);
+        for(int j = bitmapHeight - 1; j >= 0; --j) {
+            STPoint3 imagePlanePt = mImagePlane->getImagePlanePoint(i, j);
             Ray cameraRay = mCamera->generateRay(imagePlanePt);
             
             float minT = std::numeric_limits<float>::infinity();
@@ -344,31 +344,64 @@ STImage Scene::render() {
                 STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
                 
-                if(i == 349 && j == 371) {
+                if(i == 271 && j == 178) {
                     
-                    cout << "Intersection Pt: " << setw(5)
+                    cout << setw(25) << "Intersection Pt: " << "("
                          << closestIntersection.intersectionPt.x << ","
                          << closestIntersection.intersectionPt.y << ","
                          << closestIntersection.intersectionPt.z << ")"
                     << endl;
                     
-                    cout << "Intersection Normal: "
+                    cout << setw(25) << "Intersection Normal: " << "("
                          << closestIntersection.intersectionNormal.x << ","
                          << closestIntersection.intersectionNormal.y << ","
                          << closestIntersection.intersectionNormal.z << ")"
                     << endl;
                     
-                    cout << "Camera eye: "
+                    cout << setw(25) << "Camera ray direction: " << "("
+                         << cameraRay.getD().x << ","
+                         << cameraRay.getD().y << ","
+                         << cameraRay.getD().z << ")"
+                    << endl;
+                    
+                    cout << setw(25) << "Ray Camera eye: " << "("
                          << cameraRay.getE().x << ","
                          << cameraRay.getE().y << ","
                          << cameraRay.getE().z << ")"
                     << endl;
                     
-                    cout << "Camera ray direction: "
-                         << cameraRay.getD().x << ","
-                         << cameraRay.getD().y << ","
-                         << cameraRay.getD().z << ")"
+                    cout << setw(25) << "mCamera eye: " << "("
+                         << mCamera->getEye().x << ","
+                         << mCamera->getEye().y << ","
+                         << mCamera->getEye().z << ")"
                     << endl;
+                   
+                    cout << setw(25) << "mCamera u, v, w: " << endl
+                    
+                         << setw(25) <<"u: " << "("
+                         << mCamera->getU().x << ","
+                         << mCamera->getU().y << ","
+                         << mCamera->getU().z << ")"
+                         << endl
+                    
+                         << setw(25) << "v: " << "("
+                         << mCamera->getV().x << ","
+                         << mCamera->getV().y << ","
+                         << mCamera->getV().z << ")"
+                         << endl
+                    
+                         << setw(25) << "w: " << "("
+                         << mCamera->getW().x << ","
+                         << mCamera->getW().y << ","
+                         << mCamera->getW().z << ")"
+                        << endl << endl
+                    
+                         << "mCamera fovy and aspect: " << endl
+                         << setw(25) << "fovy: " << mCamera->getFovy() << endl
+                         << setw(25) << "aspect: " << mCamera->getAspect()
+                    << endl;
+                    
+
                     
                 }
             } else {
@@ -377,6 +410,10 @@ STImage Scene::render() {
             
         }
         
+        mImagePlane->setBitmapPixel(110, 110, STColor4ub(255, 0, 0));
+        mImagePlane->setBitmapPixel(111, 111, STColor4ub(255, 0, 0));
+        mImagePlane->setBitmapPixel(109, 109, STColor4ub(255, 0, 0));
+        mImagePlane->setBitmapPixel(108, 108, STColor4ub(255, 0, 0));
         mImagePlane->saveToFile(*mOutputFileName);
     }
     

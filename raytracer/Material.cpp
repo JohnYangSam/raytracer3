@@ -53,8 +53,10 @@ STColor3f Material::getColor(STPoint3 intersection, STVector3 normal, Camera cam
     ambientTerm *= mAmbient;
     
     for(int l = 0; l < dLights->size(); l++) {
-        STVector3 L = (-1.0f)*dLights->at(l).pointToLightVector();
-        STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;
+        STVector3 L = dLights->at(l).pointToLightVector();
+        STVector3 Lm = dLights->at(l).pointToLightVector();
+        Lm.Normalize();
+STVector3 R = 2.0*STVector3::Dot(Lm,normal)*normal-Lm;
         R.Normalize();
         STVector3 V = (-1.0f)*camera.getW();
 
@@ -64,9 +66,10 @@ STColor3f Material::getColor(STPoint3 intersection, STVector3 normal, Camera cam
     }
     
     for(int l = 0; l < pLights->size(); l++) {
-        STVector3 L = (-1.0f)*pLights->at(l).pointToLightVector(intersection);
-        STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;
-        R.Normalize();
+        STVector3 L = pLights->at(l).pointToLightVector(intersection);
+        STVector3 Lm = pLights->at(l).pointToLightVector(intersection);
+        Lm.Normalize();
+        STVector3 R = 2.0*STVector3::Dot(Lm,normal)*normal-Lm;        R.Normalize();
         STVector3 V = camera.getEye() - intersection;
         V.Normalize();
         

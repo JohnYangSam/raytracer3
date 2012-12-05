@@ -7,6 +7,12 @@
 //
 
 #include "ImagePlane.h"
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
 #define HALF_PIXEL 0.5f
 
 ImagePlane::ImagePlane(const Camera& camera,
@@ -33,7 +39,7 @@ ImagePlane::ImagePlane(const Camera& camera,
     UL = C + (x * camera.getU()) + (y * camera.getV());
     LR = C - (x * camera.getU()) - (y * camera.getV());
     UR = C - (x * camera.getU()) + (y * camera.getV());
-
+    
     mImagePlaneWidth = 2 * x;
     mImagePlaneHeight = 2 * y;
     
@@ -47,14 +53,21 @@ ImagePlane::ImagePlane(const Camera& camera,
 // the image plane since the usual pixel integers refer to the bottom
 // left corner of the pixel but we want the center of the pixel
 // (hence adding .5)
-STPoint2 ImagePlane::getImagePlane2DPoint(int pixelX, int pixelY) const
+//
+//
+//
+STPoint3 ImagePlane::getImagePlanePoint(int pixelX, int pixelY) const
 {
-    // These are the x and y are the coordinates in the Image plane if we had
-    // orthographic perspective
-    float u = LL.x + ( (LR.x - LL.x) / mBitmapImageWidth ) * (pixelX + HALF_PIXEL);
-    float v = LL.y + ( (UL.y - LL.y) / mBitmapImageHeight ) * (pixelY + HALF_PIXEL);
+    //u and v are between [0, 1] representing how far along the
+    //image plane we are
+    float u = (pixelX + HALF_PIXEL) / mBitmapImageWidth;
+    float v = (pixelY + HALF_PIXEL) / mBitmapImageHeight;
    
-    return STPoint2(u,v);
+    //WEIGHTED AVERAGES
+    STVector3 result = ( STVector3(LL) * (1 - v) + STVector3(UL)*(v) ) * (1 - u)
+    + (STVector3(LR) * (1 - v) + STVector3(UR) * (v)) * (u);
+    
+    return STPoint3(result);
 }
 
 Pixel ImagePlane::getBitmapPixel(int x, int y) const

@@ -55,7 +55,7 @@ bool Triangle::findPointHit(Ray r, Intersection& intersect) const{
     if(beta < 0 || beta > 1 - gamma) return false;
     
     intersect.t = t;
-    intersect.intersectionPt = r.getE() + t * d;
+    intersect.intersectionPt = r.getE() + t * r.getD();
     intersect.intersectionNormal = STVector3::Cross(v2-v1,v3-v2);
     intersect.intersectionNormal.Normalize();
     return true;

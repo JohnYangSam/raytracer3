@@ -24,7 +24,7 @@ public:
    
     //Get the bilerped points in the image plane from
     //two pixel coordinates
-    STPoint2 getImagePlane2DPoint(int pixelX, int pixelY) const;
+    STPoint3 getImagePlanePoint(int pixelX, int pixelY) const;
   
     //Pixel operations
     Pixel getBitmapPixel(int pixelX, int pixelY) const;

@@ -7,6 +7,10 @@
 //
 
 #include "Camera.h"
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 //Defaults Ctor is empty so it can be initialized later
 Camera::Camera() {}
@@ -48,7 +52,7 @@ Camera::Camera( float ex, float ey, float ez,
 //initialization list
 void Camera::Initialize() {
     //Calculate a (the direction 
-    STVector3 a = (-1.0f)*STVector3(mLookAt - mEye);
+    STVector3 a = STVector3(mLookAt - mEye);
     STVector3 b = mUp;
     
     //Normalize a to w
@@ -64,11 +68,38 @@ void Camera::Initialize() {
    
     //Convert field of view to radians!
     mFovy = DegreesToRadians(mFovy);
+    
+    //DEBUG CODE
+     cout << setw(25) << "Camera created with u, v, w: " << endl
+     << setw(25) <<"u: " << "("
+     << this->getU().x << ","
+     << this->getU().y << ","
+     << this->getU().z << ")"
+     << endl
+
+     << setw(25) << "v: " << "("
+     << this->getV().x << ","
+     << this->getV().y << ","
+     << this->getV().z << ")"
+     << endl
+
+     << setw(25) << "w: " << "("
+     << this->getW().x << ","
+     << this->getW().y << ","
+     << this->getW().z << ")"
+     << endl << endl;
 }
 
 Ray Camera::generateRay(const STPoint2& imagePlane2DPt) const
 {
-    STVector3 direction = (-1.0)*getW() + imagePlane2DPt.x * getU() + imagePlane2DPt.y * getV();
+    STVector3 direction = getW() + imagePlane2DPt.x * getU() + imagePlane2DPt.y * getV();
+    return Ray(direction, mEye);
+}
+
+Ray Camera::generateRay(const STPoint3& imagePlane3DPt) const
+{
+    STVector3 direction = imagePlane3DPt - getEye();
+    direction.Normalize();
     return Ray(direction, mEye);
 }
 
