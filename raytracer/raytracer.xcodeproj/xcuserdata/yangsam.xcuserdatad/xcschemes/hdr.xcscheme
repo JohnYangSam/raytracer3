@@ -65,7 +65,7 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/ShadowTest1.txt"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/TransformStackTest.txt"
@@ -74,6 +74,10 @@
          <CommandLineArgument
             argument = "./exampleScenes/TransformationTest.txt"
             isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "./exampleScenes/ShadowTest2.txt"
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/SphereShadingTest1.txt"
@@ -85,6 +89,10 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/CornellBox.txt"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "./exampleScenes/RecursiveTest.txt"
             isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>

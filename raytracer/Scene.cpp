@@ -313,116 +313,81 @@ STImage Scene::render() {
     int bitmapWidth = mImagePlane->getBitmapWidth();
   
     //Object
-    int sceneObjCount = mSceneObjects->size();
-    cout << "SceneObject count " << sceneObjCount << endl;
+    //int sceneObjCount = mSceneObjects->size();
+    //cout << "SceneObject count " << sceneObjCount << endl;
     
     //Iterate through the whole bitmap
     for(int i = bitmapWidth - 1; i >= 0; --i) {
-        cout << "one line down! " << i << endl;
+        //cout << "one line down! " << i << endl;
         for(int j = bitmapHeight - 1; j >= 0; --j) {
-            
-            
             STPoint3 imagePlanePt = mImagePlane->getImagePlanePoint(i, j);
             Ray cameraRay = mCamera->generateRay(imagePlanePt);
             
-            float minT = std::numeric_limits<float>::infinity();
-            //SceneObject* closestSceneObjPtr = NULL;
-            int closestObjIndex = -1;
+            int bounceDepth = mBounceDepth;
+            STColor3f color = getReflectionColor(cameraRay, *mCamera, bounceDepth);
             
-            for(int o = 0; o < sceneObjCount; ++o) {
-                SceneObject* sceneObjectPtr = mSceneObjects->at(o);
-                if(sceneObjectPtr->intersection(cameraRay)) {
-                    Intersection hit = sceneObjectPtr->getIntersection();
-                    if(hit.t < minT) {
-                        minT = hit.t;
-                        closestObjIndex = o;
-                    }
-                }
-                
-            }
-            
-            if(closestObjIndex != -1) {
-                
-                SceneObject* object = mSceneObjects->at(closestObjIndex);
-                Intersection closestIntersection = object->getIntersection();
-                
-                STColor3f color = getColor(object->getMaterial(), closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights, *mSceneObjects, mBounceDepth);
-                mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
-              
-                if(i == 463 && j == 401) {
-                    
-                    cout << setw(25) << "Intersection Pt: " << "("
-                         << closestIntersection.intersectionPt.x << ","
-                         << closestIntersection.intersectionPt.y << ","
-                         << closestIntersection.intersectionPt.z << ")"
-                    << endl;
-                    
-                    cout << setw(25) << "Intersection Normal: " << "("
-                         << closestIntersection.intersectionNormal.x << ","
-                         << closestIntersection.intersectionNormal.y << ","
-                         << closestIntersection.intersectionNormal.z << ")"
-                    << endl;
-                    
-                    cout << setw(25) << "Camera ray direction: " << "("
-                         << cameraRay.getD().x << ","
-                         << cameraRay.getD().y << ","
-                         << cameraRay.getD().z << ")"
-                    << endl;
-                    
-                    cout << setw(25) << "Ray Camera eye: " << "("
-                         << cameraRay.getE().x << ","
-                         << cameraRay.getE().y << ","
-                         << cameraRay.getE().z << ")"
-                    << endl;
-                    
-                    cout << setw(25) << "mCamera eye: " << "("
-                         << mCamera->getEye().x << ","
-                         << mCamera->getEye().y << ","
-                         << mCamera->getEye().z << ")"
-                    << endl;
-                   
-                    cout << setw(25) << "mCamera u, v, w: " << endl
-                    
-                         << setw(25) <<"u: " << "("
-                         << mCamera->getU().x << ","
-                         << mCamera->getU().y << ","
-                         << mCamera->getU().z << ")"
-                         << endl
-                    
-                         << setw(25) << "v: " << "("
-                         << mCamera->getV().x << ","
-                         << mCamera->getV().y << ","
-                         << mCamera->getV().z << ")"
-                         << endl
-                    
-                         << setw(25) << "w: " << "("
-                         << mCamera->getW().x << ","
-                         << mCamera->getW().y << ","
-                         << mCamera->getW().z << ")"
-                        << endl << endl
-                    
-                         << "mCamera fovy and aspect: " << endl
-                         << setw(25) << "fovy: " << mCamera->getFovy() << endl
-                         << setw(25) << "aspect: " << mCamera->getAspect()
-                    << endl;
-                    
-
-                    
-                }
-            } else {
-                mImagePlane->setBitmapPixel(i, j, STColor4ub(0, 0, 0, 255));
-            }
-            
+            mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
         }
-        
-        mImagePlane->setBitmapPixel(110, 110, STColor4ub(255, 0, 0));
-        mImagePlane->setBitmapPixel(111, 111, STColor4ub(255, 0, 0));
-        mImagePlane->setBitmapPixel(109, 109, STColor4ub(255, 0, 0));
-        mImagePlane->setBitmapPixel(108, 108, STColor4ub(255, 0, 0));
     }
     mImagePlane->saveToFile(*mOutputFileName);
     //Place holder
     return STImage(1, 1);
+}
+
+// IMPORTANT NOTE: raystart is where the ray is coming from (viewing ray
+// at the beginning this is the postition of the ImagePlane Pixel
+// Camera defines the basis and starts as the real camera then is a dummy
+// camera that defines the new basis from the intersected object.
+STColor3f Scene::getReflectionColor(Ray ray, Camera camera, int bounceDepth) {
+    
+    //Base case
+    if (bounceDepth < 0) return STColor3f(0,0,0);
+    
+    //Initialize minT so that anything else will over take it as being shorter
+    float minT = std::numeric_limits<float>::infinity();
+    int sceneObjCount = mSceneObjects->size();
+    Intersection hit;
+    
+    int closestObjIndex = -1;
+    for(int o = 0; o < sceneObjCount; ++o) {
+        SceneObject* sceneObjectPtr = mSceneObjects->at(o);
+        if(sceneObjectPtr->intersection(ray)) {
+            hit = sceneObjectPtr->getIntersection();
+            if(hit.t < minT) {
+                minT = hit.t;
+                closestObjIndex = o;
+            }
+        }
+
+    }
+
+    if(closestObjIndex != -1) {
+        SceneObject* object = mSceneObjects->at(closestObjIndex);
+        Intersection closestIntersection = object->getIntersection();
+
+        STColor3f color = getColor(object->getMaterial(), closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights, *mSceneObjects);
+        
+        //Create new inputs (HACK for camera)
+        STVector3 newDirection = ray.getD() - 2.0 * (STVector3::Dot(ray.getD(), hit.intersectionNormal)) * hit.intersectionNormal;
+       
+        Ray newRay = Ray(newDirection, hit.intersectionPt, mShadowBias);
+        
+        STPoint3 newLookAt = hit.intersectionPt + newDirection;
+       
+        // This is a really big HACK to get the program working on deadline:
+        // we only use the first and third parameters for calculations, the rest
+        // are dummies. Essentially, the camera acts as a way to specify basis
+        Camera newCamera = Camera(hit.intersectionPt,
+                                  STVector3(0,0,0),
+                                  newLookAt,
+                                  0,
+                                  0);
+       
+        //Make the recursive call
+        return color + object->getMaterial().getMirror() * getReflectionColor(newRay, newCamera, --bounceDepth);
+    } else {
+        return STColor3f(0,0,0);
+    }
 }
 
 bool Scene::occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vector<SceneObject*> sceneObjects, float maxT) {
@@ -446,10 +411,8 @@ STColor3f Scene::getColor(   Material material,
                              std::vector<PointLight>* pLights, 
                              std::vector<DirectionalLight>* dLights, 
                              std::vector<AmbientLight>* aLights, 
-                             std::vector<SceneObject*> sceneObjects,
-                             int bounceDepth)
+                             std::vector<SceneObject*> sceneObjects)
 {
-    if (bounceDepth == 0) return STColor3f(0,0,0);
     STColor3f ambientTerm = STColor3f(0.,0.,0.);
     STColor3f diffuseTerm = STColor3f(0.,0.,0.);
     STColor3f specularTerm = STColor3f(0.,0.,0.);
@@ -462,7 +425,8 @@ STColor3f Scene::getColor(   Material material,
     for(int l = 0; l < dLights->size(); l++) {
         STVector3 L = dLights->at(l).pointToLightVector();
         L.Normalize();
-        
+        float maxT = std::numeric_limits<float>::infinity();
+        if(occluderExists(intersection, L, sceneObjects, maxT)) continue;
         STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;
         R.Normalize();
         STVector3 V = (-1.0f)*camera.getW();

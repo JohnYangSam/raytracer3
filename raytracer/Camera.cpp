@@ -70,6 +70,7 @@ void Camera::Initialize() {
     mFovy = DegreesToRadians(mFovy);
     
     //DEBUG CODE
+    /*
      cout << setw(25) << "Camera created with u, v, w: " << endl
      << setw(25) <<"u: " << "("
      << this->getU().x << ","
@@ -88,6 +89,7 @@ void Camera::Initialize() {
      << this->getW().y << ","
      << this->getW().z << ")"
      << endl << endl;
+     */
 }
 
 Ray Camera::generateRay(const STPoint2& imagePlane2DPt) const
