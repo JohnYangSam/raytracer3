@@ -64,8 +64,12 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "./exampleScenes/TransformStackTest.txt"
+            argument = "./exampleScenes/ShadowTest1.txt"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "./exampleScenes/TransformStackTest.txt"
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/TransformationTest.txt"

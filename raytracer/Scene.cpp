@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <string>
 #include <iterator>
+#include <cmath>
 
 #include "Scene.h"
 #include "SceneObject.h"
@@ -12,7 +13,7 @@
 #include "Triangle.h"
 
 #define BOUNCE_DEPTH_DEFAULT    5
-#define SHADOW_BIAS_DEFAULT     0
+#define SHADOW_BIAS_DEFAULT     0.001f
 
 using namespace std;
 
@@ -342,10 +343,10 @@ STImage Scene::render() {
             if(closestObjIndex != -1) {
                 Intersection closestIntersection = mSceneObjects->at(closestObjIndex)->getIntersection();
                 
-                STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
+                STColor3f color = getColor(mSceneObjects->at(closestObjIndex)->getMaterial(), closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights, *mSceneObjects, mBounceDepth);
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
                 
-                if(i == 256 && j == 256) {
+                if(i == 463 && j == 401) {
                     
                     cout << setw(25) << "Intersection Pt: " << "("
                          << closestIntersection.intersectionPt.x << ","
@@ -421,8 +422,8 @@ STImage Scene::render() {
     return STImage(1, 1);
 }
 
-bool occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vector<SceneObject*> sceneObjects) {
-    Ray rayToLightSource = Ray(pointToLightSource, pt, 0.01, 1);
+bool Scene::occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vector<SceneObject*> sceneObjects, float maxT) {
+    Ray rayToLightSource = Ray(pointToLightSource, pt, mShadowBias, maxT);
     for(int o = 0; o < sceneObjects.size(); ++o) {
         SceneObject* sceneObjectPtr = sceneObjects.at(o);
         if(sceneObjectPtr->intersection(rayToLightSource)) {
@@ -432,13 +433,17 @@ bool occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vector<Scene
     return false;
 }
 
-STColor3f Material::getColor(STPoint3 intersection, 
+//Static so we don't have problems with this being included in multiple .o files
+float Scene::max(float a, float b) { return a > b ? a : b; }
+
+STColor3f Scene::getColor(          Material material,
+                             STPoint3 intersection,
                              STVector3 normal, 
                              Camera camera, 
                              std::vector<PointLight>* pLights, 
                              std::vector<DirectionalLight>* dLights, 
                              std::vector<AmbientLight>* aLights, 
-                             std::vector<SceneObject*> sceneObjects, 
+                             std::vector<SceneObject*> sceneObjects,
                              int bounceDepth)
 {
     STColor3f ambientTerm = STColor3f(0.,0.,0.);
@@ -448,36 +453,35 @@ STColor3f Material::getColor(STPoint3 intersection,
     for(int l = 0; l < aLights->size(); l++) {
         ambientTerm += aLights->at(l).getColor();
     }
-    ambientTerm *= mAmbient;
+    ambientTerm *= material.getAmbient();
     
     for(int l = 0; l < dLights->size(); l++) {
         STVector3 L = dLights->at(l).pointToLightVector();
         L.Normalize();
-        if(occluderExists(intersection, L, sceneObjects)) continue;
         
         STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;
         R.Normalize();
         STVector3 V = (-1.0f)*camera.getW();
         
-        diffuseTerm += mDiffuse * dLights->at(l).getColor() * max(0., STVector3::Dot(L, normal));
+        diffuseTerm += material.getDiffuse() * dLights->at(l).getColor() * max(0., STVector3::Dot(L, normal));
         
-        specularTerm += mSpecular * dLights->at(l).getColor() * pow(max(0., STVector3::Dot(R, V)), mShine);
+        specularTerm += material.getSpecular() * dLights->at(l).getColor() * pow(max(0., STVector3::Dot(R, V)), material.getShine());
     }
     
     for(int l = 0; l < pLights->size(); l++) {
         STVector3 L = pLights->at(l).pointToLightVector(intersection);
-        if(occluderExists(intersection, L, sceneObjects)) continue;
         L.Normalize();
+        float maxT = (pLights->at(l).getPosition() - intersection).Length();
+        if(occluderExists(intersection, L, sceneObjects, maxT)) continue;
         
         STVector3 R = 2.0*STVector3::Dot(L,normal)*normal-L;        
         R.Normalize();
         STVector3 V = camera.getEye() - intersection;
         V.Normalize();
         
-        diffuseTerm += mDiffuse * pLights->at(l).getColor() * max(0, STVector3::Dot(L, normal));
+        diffuseTerm += material.getDiffuse() * pLights->at(l).getColor() * max(0, STVector3::Dot(L, normal));
         
-        specularTerm += mSpecular * pLights->at(l).getColor() * pow(max(0, STVector3::Dot(R, V)), mShine);
+        specularTerm += material.getSpecular() * pLights->at(l).getColor() * pow(max(0, STVector3::Dot(R, V)), material.getShine());
     }
-    
     return ambientTerm + diffuseTerm + specularTerm;
 }

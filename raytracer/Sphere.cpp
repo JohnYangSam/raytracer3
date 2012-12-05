@@ -7,6 +7,7 @@
 //
 
 #include "Sphere.h"
+#include <assert.h>
 
 Sphere::Sphere( const STPoint3& center,
                float r) :
@@ -73,6 +74,9 @@ bool Sphere::findPointHit(Ray r, Intersection& intersect, STTransform4 transform
     normal = transform.Inverse().Transpose() * normal;
     normal.Normalize();
     intersect.intersectionNormal = normal;
+   
+    //INCLUDE THE BIAS so that this doesn't revert on itself!
+    if(t < r.getMinT() || t > r.getMaxT()) return false;
     
     return true;
 }

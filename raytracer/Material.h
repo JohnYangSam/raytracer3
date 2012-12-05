@@ -37,6 +37,7 @@ public:
     STColor3f getDiffuse()  const { return mDiffuse;  }
     STColor3f getSpecular() const { return mSpecular; }
     STColor3f getMirror()   const { return mMirror;   }
+    float     getShine()    const { return mShine;    }
     
     STColor3f getColor(STPoint3 intersection, STVector3 normal, Camera camera, std::vector<PointLight>* pLights, std::vector<DirectionalLight>* dLights, std::vector<AmbientLight>* aLights);
 

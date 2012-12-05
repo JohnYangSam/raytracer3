@@ -21,6 +21,8 @@ public:
     //Overide virtual
     STVector3 pointToLightVector(const STPoint3& pt) const;
     
+    STPoint3 getPosition() { return mPosition; } const;
+    
     //Destructor
     ~PointLight();
     

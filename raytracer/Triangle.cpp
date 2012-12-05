@@ -72,6 +72,10 @@ bool Triangle::findPointHit(Ray r, Intersection& intersect, STTransform4 transfo
     normal.Normalize();
     
     intersect.intersectionNormal = normal;
+   
+    //Shadow bias
+    if(t < r.getMinT() || t > r.getMaxT()) return false;
+    
     return true;
 
 }

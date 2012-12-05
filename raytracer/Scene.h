@@ -74,7 +74,7 @@ private:
     Material*                       mCurrMaterial;
     
     //Miscellaneous variables
-    int                             mShadowBias;
+    float                           mShadowBias;
     
     //Bounce depth
     int                             mBounceDepth;
@@ -92,7 +92,19 @@ private:
     
     //Matrix stack
     std::stack<STTransform4>*       mMatrixStack;
-    
+   
+    //Helper color functions
+    float max(float a, float b);
+    bool occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vector<SceneObject*> sceneObjects, float maxT);
+    STColor3f getColor(          Material material,
+                          STPoint3 intersection,
+                          STVector3 normal,
+                          Camera camera,
+                          std::vector<PointLight>* pLights,
+                          std::vector<DirectionalLight>* dLights,
+                          std::vector<AmbientLight>* aLights,
+                          std::vector<SceneObject*> sceneObjects,
+                          int bounceDepth);
 
 };
 
