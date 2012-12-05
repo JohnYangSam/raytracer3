@@ -69,11 +69,11 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/TriangleShadingTest.txt"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/CornellBox.txt"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
