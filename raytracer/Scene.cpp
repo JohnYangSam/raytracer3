@@ -280,7 +280,8 @@ void Scene::ParsedAmbientLight(const STColor3f& col)
 
 void Scene::ParsedPointLight(const STPoint3& loc, const STColor3f& col)
 {
-    mPointLights->push_back(PointLight(col, loc));
+    STTransform4 currTransform = mMatrixStack->top();
+    mPointLights->push_back(PointLight(col, loc, currTransform));
 }
 
 void Scene::ParsedDirectionalLight(const STVector3& dir, const STColor3f& col)
