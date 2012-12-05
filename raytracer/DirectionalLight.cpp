@@ -8,7 +8,7 @@
 
 #include "DirectionalLight.h"
 
-DirectionalLight::DirectionalLight(STColor3f color, const STVector3& direction, const STTransform4& transform) :
+DirectionalLight::DirectionalLight(STColor3f color, const STVector3& direction) :
 
 Light(color),
 mDirection(STVector3(direction))

@@ -65,10 +65,10 @@ bool Sphere::findPointHit(Ray r, Intersection& intersect, STTransform4 transform
     }
     intersect.t = t;
     STPoint3 untransformedHit = (transformedRay.getE() + t * d);
-    intersect.intersectionPt = untransformedHit;
+    intersect.intersectionPt = transform * untransformedHit;
     
     // Untransformed normal
-    STVector3 normal = (intersect.intersectionPt - mCenter);
+    STVector3 normal = (untransformedHit - mCenter);
     // Tranformed normal
     normal = transform.Inverse().Transpose() * normal;
     normal.Normalize();
