@@ -12,10 +12,13 @@
 
 using namespace std;
 
-PointLight::PointLight(STColor3f color, const STPoint3& positionPt) :
+PointLight::PointLight(STColor3f color, const STPoint3& positionPt, const STTransform4& transform) :
     Light(color),
     mPosition(STPoint3(positionPt))
-{}
+{
+    //Execute the transform
+    mPosition = transform * positionPt;
+}
 
 STVector3 PointLight::pointToLightVector(const STPoint3& pt) const
 {

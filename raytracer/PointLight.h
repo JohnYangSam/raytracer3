@@ -16,7 +16,7 @@ class PointLight : public Light
     
 public:
     //Ctor
-    PointLight(STColor3f color, const STPoint3& positionPt);
+    PointLight(STColor3f color, const STPoint3& positionPt, const STTransform4& transform);
     
     //Overide virtual
     STVector3 pointToLightVector(const STPoint3& pt) const;

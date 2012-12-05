@@ -19,7 +19,7 @@ class DirectionalLight : public Light
     
 public:
     //Ctor
-    DirectionalLight(STColor3f color, const STVector3& direction);
+    DirectionalLight(STColor3f color, const STVector3& direction, const STTransform4& transform);
     
     //Overide virtual
     STVector3 pointToLightVector(const STPoint3& pt) const;
