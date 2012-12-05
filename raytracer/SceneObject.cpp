@@ -25,7 +25,7 @@ SceneObject::SceneObject(       Shape*           shape,
 bool SceneObject::intersection(Ray ray)
 {
     Intersection inter = Intersection();
-    bool result     = mShape->findPointHit(ray, inter);
+    bool result     = mShape->findPointHit(ray, inter, mTransform);
     if(result) {
         t               = inter.t;
         mInterPt        = inter.intersectionPt;

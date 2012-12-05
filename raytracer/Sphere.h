@@ -22,7 +22,7 @@ public:
     Sphere( float cx, float cy, float cz,
            float r);
     
-    bool findPointHit(Ray r, Intersection& intersect) const;
+    bool findPointHit(Ray r, Intersection& intersect, STTransform4 transform) const;
     
 private:  
     STPoint3 mCenter;

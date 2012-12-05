@@ -29,9 +29,14 @@ float min(float a, float b) {
     return b;
 }
 
-bool Sphere::findPointHit(Ray r, Intersection& intersect) const{
-    STVector3 e_minus_c = r.getE() - mCenter;
-    STVector3 d = r.getD();
+bool Sphere::findPointHit(Ray r, Intersection& intersect, STTransform4 transform) const{
+
+    //Convert ray with M^(-1)
+    Ray transformedRay = Ray(transform.Inverse() * r.getD(),
+                            transform.Inverse() * r.getE());
+    
+    STVector3 e_minus_c = (transformedRay.getE() - mCenter);
+    STVector3 d = (transformedRay.getD());
     
     float a = STVector3::Dot(d, d);
     float b = 2 * STVector3::Dot(d, e_minus_c);
@@ -44,11 +49,30 @@ bool Sphere::findPointHit(Ray r, Intersection& intersect) const{
        return false; 
     } else if (discriminant == 0) { // 1 solution
         t = (-b + sqrt(discriminant)) / (2 * a);
-    } else { // 2 solutions, pick smaller t which is closer to eye
-        t = min((-b + sqrt(discriminant)) / (2 * a), (-b - sqrt(discriminant)) / (2 * a));
+    } else { // 2 solutions, pick smaller t > 0 which is closer to eye
+        float result1 = (-b + sqrt(discriminant)) / (2 * a);
+        float result2 = (-b - sqrt(discriminant)) / (2 * a);
+        
+        //Pick the smallest which is greater than 0
+        if (result1 < 0) {
+            t = result2;
+        } else if (result2 < 0) {
+            t = result1;
+        } else {
+            t = min(result1, result2);
+        }
+        
     }
     intersect.t = t;
-    intersect.intersectionPt = r.getE() + t * d;
-    intersect.intersectionNormal = (intersect.intersectionPt - mCenter) / mRadius;
+    STPoint3 untransformedHit = (transformedRay.getE() + t * d);
+    intersect.intersectionPt = untransformedHit;
+    
+    // Untransformed normal
+    STVector3 normal = (intersect.intersectionPt - mCenter);
+    // Tranformed normal
+    normal = transform.Inverse().Transpose() * normal;
+    normal.Normalize();
+    intersect.intersectionNormal = normal;
+    
     return true;
 }

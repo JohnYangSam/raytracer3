@@ -9,7 +9,7 @@
 #include "Shape.h"
 
 
-bool Shape::findPointHit(Ray r, Intersection& intersect) const
+bool Shape::findPointHit(Ray r, Intersection& intersect, STTransform4 transform) const
 {
     return false;
 }

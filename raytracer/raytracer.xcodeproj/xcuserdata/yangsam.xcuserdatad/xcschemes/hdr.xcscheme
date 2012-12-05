@@ -64,6 +64,14 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
+            argument = "./exampleScenes/TransformStackTest.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "./exampleScenes/TransformationTest.txt"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "./exampleScenes/SphereShadingTest1.txt"
             isEnabled = "NO">
          </CommandLineArgument>
@@ -73,7 +81,7 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "./exampleScenes/CornellBox.txt"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

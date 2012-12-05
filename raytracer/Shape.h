@@ -18,7 +18,7 @@ class Shape
 
     
 public:
-    virtual bool findPointHit(Ray r, Intersection& intersect) const;
+    virtual bool findPointHit(Ray r, Intersection& intersect, STTransform4 transform) const;
     
 private:  
 

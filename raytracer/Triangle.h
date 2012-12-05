@@ -24,7 +24,7 @@ public:
              float x2, float y2, float z2,
              float x3, float y3, float z3);
     
-    bool findPointHit(Ray r, Intersection& intersect) const;
+    bool findPointHit(Ray r, Intersection& intersect, STTransform4 transform) const;
     
 private:  
     STPoint3 v1;

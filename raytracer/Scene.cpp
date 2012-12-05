@@ -243,17 +243,17 @@ void Scene::ParsedPopMatrix()
 
 void Scene::ParsedRotate(float rx, float ry, float rz)
 {
-    mMatrixStack->push(STTransform4::Rotation(rx, ry, rz));
+    mMatrixStack->top() = (mMatrixStack->top() * STTransform4::Rotation(rx, ry, rz));
 }
 
 void Scene::ParsedScale(float sx, float sy, float sz)
 {
-    mMatrixStack->push(STTransform4::Scaling(sx, sy, sz));
+    mMatrixStack->top() = (mMatrixStack->top() *STTransform4::Scaling(sx, sy, sz));
 }
 
 void Scene::ParsedTranslate(float tx, float ty, float tz)
 {
-    mMatrixStack->push(STTransform4::Translation(tx, ty, tz));
+    mMatrixStack->top() = (mMatrixStack->top() * STTransform4::Translation(tx, ty, tz));
 }
 
 void Scene::ParsedSphere(const STPoint3& center, float radius)
@@ -344,7 +344,7 @@ STImage Scene::render() {
                 STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
                 
-                if(i == 271 && j == 178) {
+                if(i == 256 && j == 256) {
                     
                     cout << setw(25) << "Intersection Pt: " << "("
                          << closestIntersection.intersectionPt.x << ","
@@ -414,9 +414,8 @@ STImage Scene::render() {
         mImagePlane->setBitmapPixel(111, 111, STColor4ub(255, 0, 0));
         mImagePlane->setBitmapPixel(109, 109, STColor4ub(255, 0, 0));
         mImagePlane->setBitmapPixel(108, 108, STColor4ub(255, 0, 0));
-        mImagePlane->saveToFile(*mOutputFileName);
     }
-    
+    mImagePlane->saveToFile(*mOutputFileName);
     //Place holder
     return STImage(1, 1);
 }
