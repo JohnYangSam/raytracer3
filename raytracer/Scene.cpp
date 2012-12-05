@@ -342,7 +342,7 @@ STImage Scene::render() {
             if(closestObjIndex != -1) {
                 Intersection closestIntersection = mSceneObjects->at(closestObjIndex)->getIntersection();
                 
-                STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, mPointLights, mDirectionalLights, mAmbientLights);
+                STColor3f color = mSceneObjects->at(closestObjIndex)->getMaterial().getColor(closestIntersection.intersectionPt, closestIntersection.intersectionNormal, *mCamera, *mPointLights, *mDirectionalLights, *mAmbientLights, *mSceneObjects, mBounceDepth);
                 mImagePlane->setBitmapPixel(i, j, STColor4ub(color));
                 
                 if(i == 256 && j == 256) {

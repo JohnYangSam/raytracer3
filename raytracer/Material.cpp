@@ -7,6 +7,9 @@
 //
 
 #include "Material.h"
+#include <vector>
+
+using namespace std;
 
 Material::Material( const STColor3f& ambient,
                    const STColor3f& diffuse,
@@ -52,7 +55,14 @@ bool occluderExists(STPoint3 pt, STVector3 pointToLightSource, std::vector<Scene
     return false;
 }
 
-STColor3f Material::getColor(STPoint3 intersection, STVector3 normal, Camera camera, std::vector<PointLight>* pLights, std::vector<DirectionalLight>* dLights, std::vector<AmbientLight>* aLights, std::vector<SceneObject*> sceneObjects)
+STColor3f Material::getColor(STPoint3 intersection, 
+                             STVector3 normal, 
+                             Camera camera, 
+                             std::vector<PointLight>* pLights, 
+                             std::vector<DirectionalLight>* dLights, 
+                             std::vector<AmbientLight>* aLights, 
+                             std::vector<SceneObject*> sceneObjects, 
+                             int bounceDepth)
 {
     STColor3f ambientTerm = STColor3f(0.,0.,0.);
     STColor3f diffuseTerm = STColor3f(0.,0.,0.);
